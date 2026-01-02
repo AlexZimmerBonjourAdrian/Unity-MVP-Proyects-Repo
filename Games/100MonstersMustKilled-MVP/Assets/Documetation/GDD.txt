@@ -1,0 +1,210 @@
+Historia
+
+Un nigromante te ofrece un trato: puede revivir a tu esposa si matas a 100 monstruos que pululan por la zona. El problema es que estos monstruos son más humanos que monstruos, cada uno con su propia personalidad, historia y emociones. Deberás decidir si serás un egoísta autoproclamado héroe que los mata sin importarle nada, o un héroe de verdad que intenta entender qué es realmente lo que planea el nigromante y qué saca con esto.
+
+Objetivo Principal (MVP - 1 Semana)
+
+Matar a 3-5 monstruos para que el nigromante reviva a tu esposa.
+
+Nota: El objetivo final del juego completo será matar a 100 monstruos, pero para el MVP de 1 semana se reduce a 3-5 monstruos para hacer el proyecto viable en tiempo limitado.
+
+Mecánicas de Juego
+
+Sistema de Diálogo y Elección (MVP - 1 Semana):
+- Los monstruos hablan contigo antes del combate.
+- Puedes elegir hablarles o atacarlos directamente.
+- Diálogos ultra-simplificados para MVP de 1 semana:
+  - Diálogos lineales básicos (2-3 opciones por monstruo).
+  - Sin árboles complejos de diálogo.
+  - Reacciones simples: se defiende o se rinde.
+- Sistema de flags: Sistema mínimo para MVP de 1 semana.
+  - 1-2 flags globales básicos (ej: "has matado monstruos", "has hablado con monstruos").
+  - Sin flags específicos por monstruo para el MVP de 1 semana.
+  - Sistema expandible posteriormente.
+- Sistema de Infamia/Fama: POST-MVP (no incluido en MVP de 1 semana).
+
+Sistema de Amigos (MVP - 1 Semana):
+- POST-MVP: El sistema de amigos NO está incluido en el MVP de 1 semana.
+- Nota: Se implementará en fases posteriores cuando haya más tiempo de desarrollo.
+- Para el MVP de 1 semana, el enfoque está en el combate y diálogos básicos.
+
+Sistema de Combate (MVP - 1 Semana):
+- Combate por turnos: El combate se desarrolla en turnos alternados entre el jugador y el monstruo.
+- Minijuego de esquiva: Similar a Undertale, pero usando un escudo para bloquear y esquivar los ataques de los monstruos.
+  - Debes mover el escudo para protegerte de los proyectiles y ataques enemigos.
+  - El sistema de esquiva es fundamental para sobrevivir en combate.
+  - Patrones de combate: Sistema mínimo para MVP de 1 semana.
+    - 2-3 patrones base reutilizables (no 5-7).
+    - Tipos de patrones básicos:
+      1. Patrones de movilidad: Requieren mover el escudo activamente para esquivar.
+      2. Patrones de posición sólida: Requieren aguantar en una posición fija para bloquear el ataque.
+    - Todos los monstruos comparten estos 2-3 patrones con variaciones mínimas de velocidad.
+    - Esto permite implementar el combate rápidamente y escalar después.
+- Sistema de ataque: Sistema de ataque sólido simplificado.
+  - Al atacar, aparecen símbolos de espadas en pantalla.
+  - Debes hacer click en el momento exacto para efectuar un ataque sólido.
+  - El timing es crucial para maximizar el daño.
+  - Sistema básico: Sin variaciones complejas para el MVP de 1 semana.
+
+Progresión (MVP - 1 Semana):
+- Debes matar exactamente 3-5 monstruos (MVP de 1 semana).
+  - 1-2 monstruos con diálogos básicos y personalidades simples.
+  - 2-3 monstruos con diálogos mínimos (solo texto básico).
+  - Todos comparten los mismos 2-3 patrones de combate con variaciones mínimas.
+  - Enfoque en hacer que el sistema funcione, no en contenido extenso.
+- Cada monstruo tiene reacciones básicas según cómo interactúes con él (defender o rendir).
+- Las decisiones morales afectan el final (sistema simplificado).
+- Sistema de guardado (MVP - 1 Semana): Guardado mínimo.
+  - El juego se guarda automáticamente cuando matas a un monstruo.
+  - Guardado simple dentro de la misma run.
+  - Sin sistema de conocimiento persistente entre partidas (POST-MVP).
+
+Game Loop:
+1. Iniciar partida
+2. Nuevo monstruo aparece
+3. Matar/Conocer/Manipular al monstruo
+4. Siguiente monstruo
+5. Repetir/TerminarRun/Morir
+
+Sistema de Tiempo (MVP - 1 Semana):
+- Sistema simplificado al máximo para MVP de 1 semana.
+- Tienes un límite de encuentros para averiguar información sobre el Nigromante.
+- Medición del tiempo: El tiempo se mide por encuentros con monstruos.
+  - Cada encuentro con un monstruo = 1 evento.
+  - 3-5 encuentros = límite (equivalente a "3 días" simplificado).
+  - Sistema ultra-simple para implementar rápidamente.
+- Pausa: El tiempo se puede pausar durante el juego.
+- Si pasas el límite de encuentros sin descubrir la información crucial:
+  - Ocurre un Game Over.
+  - La partida se pierde y debes iniciar una nueva run.
+- El tiempo corre mientras juegas, añadiendo presión y urgencia a las decisiones.
+
+Temática y Estilo
+
+Inspiración: Undertale - Los monstruos son seres con emociones, personalidades y vidas propias, no simples enemigos.
+
+Moralidad:
+- Ruta egoísta: Matas sin importarte nada, solo quieres revivir a tu esposa.
+- Ruta heroica: Intentas entender la situación, descubres los planes del nigromante, y tomas decisiones más informadas.
+
+Misterio:
+- ¿Qué es realmente lo que planea el nigromante?
+- ¿Qué saca con que mates a 3-5 monstruos? (MVP de 1 semana - expandible a 100 en versión completa)
+- ¿Hay una forma de salvar a tu esposa sin matar a todos?
+
+Elementos de Juego
+
+Monstruos (MVP - 1 Semana):
+- 3-5 monstruos únicos con personalidades básicas (MVP de 1 semana).
+- Distribución para MVP de 1 semana:
+  - 1-2 monstruos con diálogos básicos y personalidades simples.
+  - 2-3 monstruos con diálogos mínimos (solo texto básico).
+  - Todos comparten los mismos 2-3 patrones de combate con variaciones mínimas.
+- Pueden hablar contigo y reaccionar a tus palabras (reacciones básicas: defender o rendir).
+- Algunos se defenderán, otros se rendirán.
+- Historias y emociones mínimas para el MVP de 1 semana (expandible después).
+- Diseño escalable: La arquitectura ECS permite añadir fácilmente más monstruos sin reescribir código.
+
+Jugador:
+- Un héroe que busca revivir a su esposa.
+- Puede elegir su camino: egoísta o heroico.
+- Debe descubrir la verdad detrás del trato del nigromante.
+
+Nigromante:
+- Figura misteriosa que ofrece el trato.
+- Sus verdaderas intenciones son parte del misterio central.
+
+Finales (MVP - 1 Semana)
+
+Final Egoísta (Ruta de Matanza) - Simplificado:
+- Revives a tu amada a costa de crear un ejército de zombis fieles para el nigromante.
+- El nigromante cumple su parte del trato, pero a cambio de tu muerte.
+- Final básico: Texto simple explicando el resultado.
+
+Final Heroico (Ruta de Amistad) - Simplificado:
+- Decides superar la muerte de tu amada y asumir una nueva vida.
+- Te conviertes en el guardián de estos seres.
+- Final básico: Texto simple explicando el resultado.
+
+Nota MVP de 1 semana: Los finales son simples (texto básico), sin cinemáticas ni contenido extenso. Se pueden expandir posteriormente.
+
+Sistema de Estadísticas (MVP - 1 Semana)
+
+Infamia/Fama:
+- POST-MVP: El sistema de Infamia/Fama NO está incluido en el MVP de 1 semana.
+- Nota: Se implementará en fases posteriores cuando haya más tiempo de desarrollo.
+- Para el MVP de 1 semana, el enfoque está en los sistemas core: combate y diálogos básicos.
+
+Arquitectura Técnica
+
+Arquitectura ECS (Entity Component System):
+- El juego utilizará una arquitectura ECS o similar que permita escalar el proyecto de forma rápida y significativa.
+- Principios de diseño:
+  - Separación de datos (Components) y lógica (Systems).
+  - Entidades (Entities) como contenedores de componentes.
+  - Sistemas procesan entidades basándose en sus componentes.
+- Beneficios para este proyecto:
+  - Escalabilidad: Añadir nuevos monstruos es simplemente crear nuevas entidades con diferentes combinaciones de componentes.
+  - Reutilización: Los sistemas de combate, diálogo y comportamiento se reutilizan entre todos los monstruos.
+  - Mantenibilidad: Cambios en un sistema no afectan a otros sistemas.
+  - Performance: Procesamiento eficiente de múltiples entidades.
+- Componentes principales:
+  - Componentes de combate (salud, daño, defensa).
+  - Componentes de diálogo (textos, flags, reacciones).
+  - Componentes de comportamiento (patrones de ataque, IA).
+  - Componentes de estado (amistad, infamia/fama, emociones).
+- Sistemas principales:
+  - Sistema de combate (turnos, ataques, defensa).
+  - Sistema de diálogo (árboles de decisión, flags).
+  - Sistema de tiempo (eventos, días).
+  - Sistema de guardado (estado del juego, progreso).
+
+Escalabilidad:
+- El diseño permite expandir fácilmente de 3-5 monstruos (MVP de 1 semana) a 100 monstruos (versión completa).
+- Nuevos monstruos se crean combinando componentes existentes, no requieren código nuevo.
+- Nuevos sistemas se pueden añadir sin modificar sistemas existentes.
+- El sistema de flags y diálogos es modular y extensible.
+- La arquitectura ECS permite añadir contenido rápidamente sin reescribir código base.
+
+Victoria y Derrota
+
+Condición de Victoria: Completar cualquiera de los dos finales según tus decisiones morales y acciones durante el juego.
+
+Condiciones de Derrota:
+- Muerte del jugador durante el combate.
+- Game Over por agotar los tres días sin descubrir la información crucial sobre el Nigromante.
+
+Plan de Desarrollo
+
+Fase 0: MVP de 1 Semana (1 semana)
+- 3-5 monstruos básicos
+- 2-3 patrones de combate reutilizables
+- Sistema de diálogo básico (lineal, 2-3 opciones)
+- 2 finales simples (texto básico)
+- Sistema de tiempo simplificado
+- Arquitectura ECS implementada (base)
+- Sin sistema de amigos
+- Sin sistema de Infamia/Fama
+- Guardado simple dentro de la run
+
+Fase 1: MVP Expandido (3-6 meses)
+- 10-15 monstruos
+- 1-2 amigos
+- Combate mejorado con más patrones
+- Sistema de diálogo expandido
+- 2 finales mejorados
+- Sistema de tiempo completo
+- Sistema de Infamia/Fama
+- Sistema de conocimiento persistente entre partidas
+
+Fase 2: Expansión (2-3 meses)
+- Añadir 10-20 monstruos más
+- 2-3 amigos adicionales
+- Más patrones de combate
+- Mejorar sistema de diálogo
+- Sistema completo de conocimiento persistente
+
+Fase 3: Contenido Completo (6-12 meses)
+- Llegar a 100 monstruos
+- Sistema completo de conocimiento persistente
+- Contenido adicional y pulido final

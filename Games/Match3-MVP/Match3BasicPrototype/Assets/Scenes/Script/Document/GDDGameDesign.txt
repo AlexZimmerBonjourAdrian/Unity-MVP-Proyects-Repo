@@ -1,0 +1,6 @@
+Mecanicas
+1* los bloques son intems que dependiendo si se alinean en grupos de tres  estos se destruyen y aumentan en el contador la suma de los elementos
+2* La grid es una planilla de tiles con un porsentaje que va desde 0 en las esquinas superiores hasta el centro que es un maximo de 100, la idea es que sea una matrox 2d y que sea autogenerada.
+3* los bloques siempre se mantiene alinados a estos bloques para ser eliminados.
+
+Math3 game basic mechanics

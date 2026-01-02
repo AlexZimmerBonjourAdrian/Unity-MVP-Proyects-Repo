@@ -1,0 +1,86 @@
+Game Art Style
+
+The game features a geometric art style.
+
+Player: Represented by rectangular shapes, arrows, and potentially transforming between a robot and a plane.
+Enemies: Abstract and 3D geometric shapes (triangles, spheres, boxes, pyramids, cones, and a unique "Head" boss).
+Projectiles: Distorted capsules and ovoid shapes.
+Gameplay
+
+The player can switch between three forms:
+Mechanics
+Controllers
+Plane:
+Focuses on speed, missile attacks, evading enemy fire, and curved machine gun fire. Excels at movement and evasion.
+Launches guided missiles at enemies only in front of him
+Fires machine gun in front of explodes
+Fires flares to get away from enemy fire
+Dashes to evade breaking the sound barrier to completely dodge enemy fire for a tiny amount of time.
+The cost of changing direction of the plane is considerable.
+When launching missiles you must hold down the launch button in order to fire
+
+Robot:
+Emphasizes precision and close-range combat. Can rotate, shoot in all directions, and teleport short distances (dash). Slower movement speed.
+It's like being a turret you are static this allows you to quickly re-dodge or dodge, it generates a shield to avoid dodging.
+Weaknesses: Slow movement, limited mobility. Vulnerable to fast enemies and swarms.
+Significantly increase damage. Short-range teleportation could be made more offensive, perhaps allowing the robot to move towards enemies or through projectiles. Consider adding a temporary damage resistance boost after teleporting.
+
+Hybrid:
+Strengths: Balanced damage and mobility. Versatile and adaptable to different situations. Potential for a high skill level.
+Weaknesses: Requires more precise control and strategic thinking. Shouldn't outshine either of the two specialized forms in their respective strengths.
+The Hybrid has higher base stats than either the Plane or Robot individually, but not be a direct upgrade in all areas. Perhaps it could be given increased projectile speed or special attacks that combine elements of both forms, such as a homing machine gun burst and a teleporting missile barrage. The challenge of controlling it should translate into greater damage potential, which would reward skilled players.
+I'm sorry about the missiles having a cooldown.
+
+Switching between controls can be done instantly with three keys on PC.
+Z - Plane
+Ctrl - Robot
+Alt - Hybrid
+
+Movement and shooting controls are maintained between the three controls.
+
+
+Compatible con controles de ps2.
+
+Triangle: Basic enemy. Follows the player, flies nearby, and occasionally shoots. Low health, low fire rate, easy to kill, fast speed.
+Abstract Forms: Larger enemies that attempt melee attacks. More health and slightly higher damage than Triangles. Slow speed.
+Static Form: Stationary enemy. Rapidly fires bullets in five directions. Medium health.
+Cone: Rhino-like enemy. Charges at the player. Medium health, very fast charge speed, melee attack, slow normal movement.
+Sphere: Shoots a single, instant-kill beam. Low health, slow movement, beam lasts 3 seconds with a 5-second cooldown.
+Pyramid: Creates a spiral bullet tornado. High health, slow movement, fires when the player is near with a 2-second cooldown.
+Box: Follows the player and explodes on contact. Very low health, explosion damage, fast movement.
+Head (Boss): Shoots rays and bullets from its mouth and eyes. High health. Three attack patterns: mouth ray, eye bullets, and rhino-like charge when low on health. Defeating the Head wins the game.
+Visuals
+
+Background: Black.
+Player Color: Blue.
+Enemy Colors: Red, yellow, violet, orange (possibly indicating health).
+Game Mechanics
+
+Wind Condition: Clears all on-screen enemies.
+Lose Condition: Player death.
+Difficulty: Progressively increases.
+Game Modes: Potentially infinite rounds or limited tournament mode.
+
+
+Prototype
+Core Idea: A geometric shape (the player) shoots at other geometric shapes (enemies).
+
+Simplified Gameplay:
+
+Player controls a square.
+Player can move and shoot.
+Enemies (circles) move towards the player.
+Player shoots to destroy enemies.
+Game ends when the player is hit by an enemy.
+Visuals:
+
+Black background.
+Player is a blue square.
+Enemies are red circles.
+Bullets are white dots.
+
+genere
+Arcade, top dawn shooter, 2d 
+
+Competencia
+Vampire suvrival, Brotato

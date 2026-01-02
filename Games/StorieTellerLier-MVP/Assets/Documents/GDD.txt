@@ -1,0 +1,49 @@
+## Game Design Document: Storyteller Liar
+
+**Introduction**
+
+Storyteller Liar is a narrative-driven game where the player collaborates with a cynical and sarcastic narrator to create short stories. The core gameplay revolves around proposing story elements, negotiating with the narrator, and building a narrative through a node-based UI.  The narrator's manipulative and humorous nature is central to the experience.
+
+**Story**
+
+The player interacts with a cynical, sarcastic, and slightly depressed narrator who agrees to help them create a story.  However, the narrator has their own agenda and enjoys twisting the player's ideas for their amusement. The player must learn to negotiate with the narrator to achieve their desired narrative outcome.
+
+**Gameplay Mechanics**
+
+* **Card-Based Storytelling:** The player uses a deck of cards representing story elements (characters, events, locations, objects).  They play cards to build the story, and the narrator reacts, modifying cards or adding their own. Card types could include: Character (with personality traits), Event (with consequences), Location (with atmosphere), Object (with function).
+* **Negotiation System:**  The player rolls virtual dice to influence the narrator's decisions. Higher rolls increase the chance of persuading the narrator to accept a story element or remove an unwanted change.
+* **Narrator Points:** Players earn Narrator Points by completing story segments or through successful negotiations.  These points can be spent to guarantee the narrator accepts a specific story element, adds a desired twist, or removes an unfavorable modification.
+* **Relationship Meter:** A visible meter tracks the player's relationship with the narrator. Positive interactions (successful negotiations, accepting the narrator’s suggestions) improve the relationship, making future negotiations easier.  Negative interactions worsen the relationship, making the narrator more resistant to the player's ideas.
+* **Narrator Personalities:** The narrator cycles through a set of distinct personalities, each with their own quirks, preferences, and writing styles. This adds variety and unpredictability without requiring AI.  Examples:  Romantic, Horror obsessed, Absurdist.
+* **Story Structure:** The game uses a branching narrative tree.  The player chooses from available options at each node, with the narrator sometimes influencing the choices presented or their consequences. The game ends when a conclusion node is reached.
+* **Story Exporting:** Upon completing a story, the player can export it as a PDF with a humorous, automatically generated "author signature" reflecting the narrator’s personality.
+
+
+**Characters**
+
+* **The Player:**  The player drives the story's direction by choosing story elements and negotiating with the narrator.
+* **The Narrator:**  A non-AI character with distinct personalities that cycle throughout the game.  They react to the player's choices, modify story elements, and inject their own ideas into the narrative.
+
+
+**Platforms**
+
+PC and Android (primary).
+
+**Player Motivation**
+
+Players are motivated by the challenge of negotiating with the narrator, the desire to create unique and interesting stories, and the collection of humorous author signatures.  Achievements for specific negotiation successes or story types further enhance motivation.
+
+**Art Style**
+
+Minimalist 2D graphics with simple, iconic representations of characters, locations, and objects. The UI is clean and intuitive, with a focus on the card-based system and the branching narrative tree. The color palette is muted and slightly desaturated, reflecting the narrator's cynical nature.
+
+
+**Scope**
+
+The game focuses on creating short, humorous stories.  Each playthrough should be relatively short (15-30 minutes) to encourage replayability and experimentation with different story elements and narrator personalities.
+
+**Monetization (Optional)**
+
+Consider potential monetization strategies such as optional cosmetic items for the narrator or card packs with unique story elements. Ensure monetization does not compromise the core gameplay experience.
+
+

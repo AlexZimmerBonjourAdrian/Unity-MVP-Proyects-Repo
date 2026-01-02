@@ -1,0 +1,401 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CManagerSFX
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: e7336f07a433f0640910f3376154dba3,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ListSFX.Array.size
+    value: 90
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[0]'
+    value: 
+    objectReference: {fileID: 8300000, guid: bc33de580807419469a0a814c89f99c3, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[1]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 3c072990a3b37f546b36d0c7fac64e96, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[2]'
+    value: 
+    objectReference: {fileID: 8300000, guid: aedbb1f94d842a5498439f223c7182be, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[3]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 32cd0f60e3930404d8f7b7965d2e4c6b, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[4]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 0f17b49ced158df43a5909068b2e6fa8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[5]'
+    value: 
+    objectReference: {fileID: 8300000, guid: ead316652ff04fc498797ebe229177fe, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[6]'
+    value: 
+    objectReference: {fileID: 8300000, guid: b8f2ce2e5b63d1542b3eb2471210c1e9, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[7]'
+    value: 
+    objectReference: {fileID: 8300000, guid: b91c1bf4aae6eb94e86e38222a867667, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[8]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 342b9aeb97a123745ac72d56a4a124b5, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[9]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 36b8815fce6201445bf17e1fd4fdf6f2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[10]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 5f577d9710c6eba4d995a1cc320e92c2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[11]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 426da3f636efa07458c77730fdd7a1f1, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[12]'
+    value: 
+    objectReference: {fileID: 8300000, guid: f5f1c8acf9df36c47aa951f788af138c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[13]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 6017b3d44c75fb448a1a548fc614b24e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[14]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 6d8696e9f0afc13428d9764aece29031, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[15]'
+    value: 
+    objectReference: {fileID: 8300000, guid: e2f33ead2da6bb8449cd1b4bfa90d2b2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[16]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 2478f5a055c01a345a256077a4d6e2f6, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[17]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 49465f4df035981429649e9b063c4b56, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[18]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 7fb0a6eec3b0324448acf387fedee8af, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[19]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 5254e618a1fa1a548959f70cf3b594ba, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[20]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 06793e7d5584ef6449812448b17adbd7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[21]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 120b23436c37c5747b05ac5d931881ac, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[22]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 3a97d050be35fc14bad25dc4122e7a96, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[23]'
+    value: 
+    objectReference: {fileID: 8300000, guid: e96136b16d0eb3549a430fefa0402df8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[24]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 1389fadb2517eb144811769bbd65bb36, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[25]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 0b2b426008558b64fb2385d613d73b45, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[26]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 6b52d007c4760194196cd33c9063ae63, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[27]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 7d47a2e35a7522e41ad1a3827d795eb7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[28]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 37a939be09272a2438db18e1f2ed0558, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[29]'
+    value: 
+    objectReference: {fileID: 8300000, guid: bdd48eb72d7242e4a8b8e3512f03cce8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[30]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 06fc7ae64abc37945b559e1c9b57d1e6, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[31]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 6d66953343707e0489c636dd3c869d9e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[32]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 2b65079d11f6d10409d2a243b3ccd36e, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[33]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 48bfdabfec8d9a94c879be2615c35064, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[34]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 71d3d24e221400941b06d45b461f0ba0, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[35]'
+    value: 
+    objectReference: {fileID: 8300000, guid: e2940911d4297f546ad69254f58880a1, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[36]'
+    value: 
+    objectReference: {fileID: 8300000, guid: e93a7d5989ef24c4fb013246a9bd4e2f, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[37]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 0c2f707cf28240d4d8252a0fa994647a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[38]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 9320321578a0f164181d96b60d4a36a2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[39]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 4ccd9928dc5b5af41b20ae540ce95f96, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[40]'
+    value: 
+    objectReference: {fileID: 8300000, guid: a9490ae8ff3354d429919848725f9dc2, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[41]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 8f6dbcb39b8cb7e428c1f2853fe85eab, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[42]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 7477542f9a7721b4db0451804f34bfc0, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[43]'
+    value: 
+    objectReference: {fileID: 8300000, guid: def34d8805c1b1746878f657c5750761, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[44]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 34915f8a1bfaed04cb514f6185e662d5, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[45]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 4b332dcf249bd1f47a8bfa6171d28fd8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[46]'
+    value: 
+    objectReference: {fileID: 8300000, guid: fef407f5596b7454f82396a41e91cba3, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[47]'
+    value: 
+    objectReference: {fileID: 8300000, guid: fb7cf493b28d1d9479c8a45ae4008893, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[48]'
+    value: 
+    objectReference: {fileID: 8300000, guid: f1e353708a637ef4dbe6a0aca376859c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[49]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 9f85596b7a66f1645bebbc5000dca5e4, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[50]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 9995d87970ae439478e6fb2dfc04480b, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[51]'
+    value: 
+    objectReference: {fileID: 8300000, guid: c97210ebc0494e3439c6eef7e6d6dd00, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[52]'
+    value: 
+    objectReference: {fileID: 8300000, guid: b4d2fb8f8446ea44184518b47ce3c94f, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[53]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 10daa9fb1253bb140b9daaa8ba9e8ba1, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[54]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 01436539750473e4baad056957a0889c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[55]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 6bba96cba3bb82948a8c49c5d61666da, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[56]'
+    value: 
+    objectReference: {fileID: 8300000, guid: e81300bd527c9b34985a9f4475c786dc, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[57]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 77d4bdb84e8b3534a9f0fe336da37a23, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[58]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 7270295253ba4b64d97b1983413bcce4, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[59]'
+    value: 
+    objectReference: {fileID: 8300000, guid: a616f1364ccec5740a9654b1a891b4ef, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[60]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 445788b313cf75e4abdc2d58ffcebf58, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[61]'
+    value: 
+    objectReference: {fileID: 8300000, guid: d698ef321810a9f4a8909ceb36805831, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[62]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 3ae9b34ca3f3f854ca0246024e43dfbb, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[63]'
+    value: 
+    objectReference: {fileID: 8300000, guid: d97622a46c5313c49b45a6b40f888531, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[64]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 3f0702d3d64180b4caf1a2ea82261750, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[65]'
+    value: 
+    objectReference: {fileID: 8300000, guid: cefbf0f23b66afd4f8eac042d863bd0d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[66]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 493ab13eb6151ec4ea52087b53c9163d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[67]'
+    value: 
+    objectReference: {fileID: 8300000, guid: c3f3c48b4fe425942996d1ce42fe6181, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[68]'
+    value: 
+    objectReference: {fileID: 8300000, guid: c19c95302ed765649ac31e134e6b8ced, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[69]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 637b511f37f145c45bb36eb2cc585a80, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[70]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 0fec135be090af3409bfb90eee400f5a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[71]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 148cad6c8f85db54dbb3cf977c333902, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[72]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 18b057711da7f6d40a924daebe3ffe3c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[73]'
+    value: 
+    objectReference: {fileID: 8300000, guid: be430017a92f39640b9bbd7ff072220a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[74]'
+    value: 
+    objectReference: {fileID: 8300000, guid: a6fffaf222f7c1c418631f198074fd74, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[75]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 3740b8973decb0b48ac96a09d2d17247, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[76]'
+    value: 
+    objectReference: {fileID: 8300000, guid: d83340cb3ae051f41b438ee233986a69, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[77]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 8056cdb0783e27147a7af1233795dbba, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[78]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 0debf900d6ccd2a4cb02dbe4574b56f4, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[79]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 74fcecd4ba2bcbc42b493ffd6d936ce0, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[80]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 16df24a83e2517f4f871129dd98a9c2a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[81]'
+    value: 
+    objectReference: {fileID: 8300000, guid: badb8a3e213b76e40a56b41c5d53abb5, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[82]'
+    value: 
+    objectReference: {fileID: 8300000, guid: dfc5e85583993f04483dd162ac117d31, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[83]'
+    value: 
+    objectReference: {fileID: 8300000, guid: ce11ecb29bc278d4cbfcc4540ce706b7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[84]'
+    value: 
+    objectReference: {fileID: 8300000, guid: fa6c3922c20699040839583473ea2b05, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[85]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 2a82d0f6827af0247bb6dcb12d85759a, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[86]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 966ce93c4c8028d4a83743b07ddd7187, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[87]'
+    value: 
+    objectReference: {fileID: 8300000, guid: e1331e1dd3065c14e9a4b997f9ef2c09, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[88]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 54b3f75317e94ba49881902a0009e758, type: 3}
+  - target: {fileID: 0}
+    propertyPath: 'ListSFX.Array.data[89]'
+    value: 
+    objectReference: {fileID: 8300000, guid: 6c8df6a7209cd2a468c2d1f53030e3af, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioMixer
+    value: 
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
+  m_CoupledType:
+    m_NativeTypeID: 0
+    m_ManagedTypePPtr: {fileID: 0}
+    m_ManagedTypeFallback: 
+  m_CoupledProperties: []

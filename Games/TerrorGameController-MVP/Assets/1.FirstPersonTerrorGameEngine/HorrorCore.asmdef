@@ -1,0 +1,25 @@
+{
+    "name": "HorrorCore",
+    "rootNamespace": "",
+    "references": [
+        "FPSCore",
+        "Unity.TextMeshPro",
+        "YarnSpinner.Unity",
+        "YarnSpinner.Unity.Editor",
+        "Unity.InputSystem",
+        "Unity.Addressables",
+        "Unity.Addressables.Editor",
+        "Unity.Addressables.Runtime.Tests",
+        "Unity.Addressables.Editor.Tests",
+        "Unity.ResourceManager"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

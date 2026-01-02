@@ -1,0 +1,132 @@
+title: EntrevistaInicio
+---
+
+Monitor: Buenas tardes. Siéntate. Esto es solo una entrevista rutinaria.
+Monitor: Empecemos con algo simple. ¿Cómo te describirías profesionalmente?
+
+-> Responder con sinceridad
+    <<jump DosOpciones_Sincero>>
+-> Ser evasivo
+    <<jump DosOpciones_Evasivo>>
+===
+
+title: DosOpciones_Sincero
+---
+Monitor: Bien. Aprecio la honestidad. Hablemos de tus fortalezas.
+Monitor: Elige una que te defina mejor.
+
+-> Perseverante
+    Monitor: La perseverancia es útil cuando el entorno se pone en tu contra.
+    <<jump TresOpciones>>
+-> Analítico
+    Monitor: El análisis ayuda a ver lo que otros no ven... incluso cuando todo está a oscuras.
+    <<jump TresOpciones>>
+===
+
+title: DosOpciones_Evasivo
+---
+Monitor: Entiendo. Nervios. Es normal en estas circunstancias.
+Monitor: Intentemos de nuevo. ¿Qué dirías que te motiva?
+
+-> Superación personal
+    Monitor: Interesante. La superación a veces exige sacrificar... partes de uno mismo.
+    <<jump TresOpciones>>
+-> Reconocimiento
+    Monitor: La fama tiene un precio. Y las sombras siempre cobran sus deudas.
+    <<jump TresOpciones>>
+===
+
+title: TresOpciones
+---
+<<setAutoAdvance false>>
+Monitor: Supongamos que estás en una sala oscura, solo una mesa, un monitor encendido.
+Monitor: Alguien al otro lado te hace preguntas. Nada fuera de lo normal... al principio.
+Monitor: ¿Qué haces primero?
+
+-> Observar con calma la sala
+    Monitor: Metódico. Los metódicos rara vez se sorprenden... salvo por lo que llevan dentro.
+    <<jump CuatroOpciones>>
+-> Buscar una salida
+    Monitor: La puerta no se abre. A veces, no está hecha para abrirse.
+    <<jump CuatroOpciones>>
+-> Responder con educación
+    Monitor: La cortesía mantiene la máscara en su sitio. Por ahora.
+    <<jump CuatroOpciones>>
+===
+
+title: CuatroOpciones
+---
+<<setAutoAdvance false>>
+Monitor: El tono cambia. Las preguntas dejan de ser laborales.
+Monitor: "La noche del 12... ¿dónde estabas cuando las luces se apagaron?"
+Monitor: Elige tu respuesta.
+
+-> No recuerdo
+    Monitor: Curioso. Ese vacío también aparece en los informes.
+    <<jump Revelacion>>
+-> En casa, solo
+    Monitor: La soledad es un refugio... y una coartada frágil.
+    <<jump Revelacion>>
+-> Con amigos
+    Monitor: Ninguno te recuerda. Tal vez no estaban allí. Tal vez nunca existieron.
+    <<jump Revelacion>>
+-> Prefiero no responder
+    Monitor: El silencio es una respuesta. Y pesa.
+    <<jump Revelacion>>
+===
+
+title: Revelacion
+---
+<<setAutoAdvance false>>
+Monitor: Dejemos la farsa. Esto no es una entrevista laboral.
+Monitor: Es tu purgatorio. Aquí vuelves cuando te niegas a ver lo que eres.
+Monitor: Te hicimos las mismas preguntas antes. Siempre respondes igual.
+Monitor: La cinta se rebobina cuando te eliminas a ti mismo de la historia.
+
+-> Aceptar la verdad
+    Monitor: Entonces di su nombre.
+    <<jump Confesion>>
+-> Seguir negándolo
+    Monitor: Como siempre.
+    <<jump Bucle>>
+-> Pedir pruebas
+    Monitor: Las dejaste en la mesa. Mira tus manos.
+    <<jump Confesion>>
+-> Guardar silencio
+    Monitor: Silencio, otra vez.
+    <<jump Bucle>>
+===
+
+title: Confesion
+---
+<<setAutoAdvance false>>
+Monitor: La verdad, completa.
+Monitor: ¿Quién eres cuando se apagan las luces?
+
+-> Un asesino
+    Monitor: Por fin. Las palabras abren puertas que la fuerza no puede.
+    <<jump DesenlaceAceptacion>>
+-> Una víctima de las circunstancias
+    Monitor: Victimario y víctima en el mismo cuerpo. Dos sombras, una silla.
+    <<jump DesenlaceAceptacion>>
+-> Nadie
+    Monitor: Nadie vuelve a empezar. Una y otra vez.
+    <<jump Bucle>>
+===
+
+title: DesenlaceAceptacion
+---
+Monitor: Aceptar no te libera, pero te permite ver la sala como es.
+Monitor: La puerta sigue cerrada. No hay salida. Solo comprensión.
+Monitor: La entrevista termina... por ahora.
+<<stop>>
+===
+
+title: Bucle
+---
+Monitor: El monitor chisporrotea. La imagen se deforma.
+Monitor: Un clic. La cinta se rebobina. Olvidas.
+<<jump EntrevistaInicio>>
+===
+
+

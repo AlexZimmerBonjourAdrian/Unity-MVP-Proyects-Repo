@@ -1,0 +1,64 @@
+1. Movimiento del jugador
+Implementar un controlador de movimiento basado en física o un CharacterController.
+Soporte para caminar, correr, saltar y agacharse.
+Ajustar la velocidad según el estado (correr, caminar, etc.).
+
+2. Rotación de la cámara
+Controlar la rotación de la cámara con el mouse.
+Limitar el ángulo vertical para evitar giros completos.
+Suavizar la rotación para una experiencia más fluida.
+
+3. Sistema de armas
+Disparo: Implementar disparos con raycasts o proyectiles.
+Recoil: Añadir retroceso al disparar.
+Recarga: Crear animaciones y lógica para recargar.
+Cambio de armas: Permitir al jugador cambiar entre diferentes armas.
+
+4. Apuntar (Aim)
+Usar un sistema de interpolación (Lerp) para centrar la cámara al apuntar.
+Ajustar el comportamiento del arma (recoil reducido, velocidad de recarga diferente) mientras se apunta.
+
+5. Oscilación del arma (Weapon Sway)
+Añadir oscilación del arma basada en el movimiento del mouse.
+Incluir movimiento de respiración para mayor realismo.
+Añadir ruido Perlin para variaciones orgánicas.
+
+6. Animaciones
+Animaciones para disparar, recargar, apuntar y cambiar de arma.
+Usar un Animator Controller para gestionar las transiciones.
+
+7. Sistema de salud
+Implementar un sistema de salud para el jugador.
+Añadir efectos visuales o de sonido al recibir daño.
+
+8. Interacción con el entorno
+Permitir al jugador interactuar con objetos (abrir puertas, recoger armas, etc.).
+Usar raycasts para detectar objetos interactuables.
+
+9. Sonido
+Efectos de sonido para disparos, recarga, pasos, etc.
+Música ambiental para mejorar la inmersión.
+
+10. HUD (Heads-Up Display)
+Mostrar información como munición, salud y objetivos.
+Añadir una mira (crosshair) para apuntar.
+
+11. IA enemiga
+Crear enemigos con comportamientos básicos (patrullar, atacar, buscar cobertura).
+Implementar detección de jugador mediante raycasts o colliders.
+
+12. Física y colisiones
+Usar colliders y rigidbodies para manejar colisiones.
+Ajustar la gravedad y la fricción para un movimiento realista.
+
+13. Post-procesamiento
+Usar efectos como Bloom, Motion Blur y Depth of Field para mejorar la calidad visual.
+Añadir efectos de cámara como sacudidas al disparar o recibir daño.
+
+14. Optimización
+Reducir el uso de recursos mediante LOD (Level of Detail) y culling.
+Optimizar scripts y animaciones para mantener un buen rendimiento.
+
+15. Configuración de controles
+Permitir al jugador personalizar los controles.
+Soporte para teclado, mouse y gamepad.

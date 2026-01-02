@@ -1,0 +1,39 @@
+﻿title: StartGame
+---
+
+
+<<jump Other>>
+<<setAutoAdvance true>>
+"¡Bienvenido al juego de terror! ¿Estás listo para enfrentarte a tus miedos más oscuros?"
+"Presiona 'E' para interactuar con los objetos y descubrir secretos ocultos."
+"Recuerda: no todo es lo que parece... y el peligro acecha en cada esquina."
+"¡Buena suerte, valiente aventurero!"
+
+<<jump PrimerPaso>>
+
+===
+
+title: PrimerPaso
+---
+
+<<setAutoAdvance false>>
+"Explora la casa y busca pistas que te ayuden a avanzar."
+"Ten cuidado con los sonidos extraños y las sombras que se mueven..."
+"Si encuentras una llave, podría abrir una puerta hacia lo desconocido."
+
+<<jump Recuerda>>
+
+===
+
+title: Recuerda
+---
+<<findAndStartDialogue "Recuerda">>
+"¡Bienvenido al juego de terror! ¿Estás listo para enfrentarte a tus miedos?"
+"Presiona 'E' para interactuar con los objetos."
+"Recuerda: no todo es lo que parece..."
+"¡Buena suerte!"
+
+<<jump StartGame>>
+===
+
+

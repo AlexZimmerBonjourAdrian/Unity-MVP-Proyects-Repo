@@ -1,0 +1,5 @@
+Que el enemigo reciva daño
+Que el enemigo muera
+Que el enemigo reaccione ante el daño
+Que puedas hacer un PickUp de arma
+Solo puedes activarla si la haz tomado antes

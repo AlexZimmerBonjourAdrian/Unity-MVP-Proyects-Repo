@@ -1,0 +1,964 @@
+
+Titulo Howl's Toy
+
+Introduccion
+este documento y juego es propiedad de ZimmzimmGames todos lso derechos reservados
+
+Concept
+Eres un sujeto que compro una mascota en un portal de animales exoticos, eres una persona con dinero y la creatura era muy tienra para no comprarla, compras una jaula para ella y notas que es una mascota muy tranquila
+Pero cada vez que la dejas de mirar parece que hace cosas al principo normales y tienras, luego graciosas aunque pareciera que humanas y luego perturbadoras hasta aterradoras.
+
+La creatura evoluciona como un Pokemon, volviendose mas inteligente y desarrollando diferentes personalidades dependiendo de como la trates:
+- Si la tratas bien (le das comida, le prestas atencion, la acaricias): Se obsesiona contigo, te ve como su unico dueño y no permitira que nadie mas te tenga. Su obsesion se vuelve peligrosa.
+- Si la tratas mal (la ignoras, le das comida podrida, la encierras): Se vuelve sadica y resentida, desarrolla un deseo de torturarte y matarte de manera cruel y calculada.
+
+No hay finales buenos, pero la forma en que mueres varia segun la ruta evolutiva que hayas tomado.
+
+historia
+Eres un persona un joven que quiere comprar una mascota pero no un gato o perro quieres comprar un conejo, pero el mas exotico que hay, compras un conejo especial que te lo venden como exotico que solo quedan pocos en el mundo el precio era economico, y tu como impulsivio que eres lo compras.
+Te llega en la noche y lo ves, es una conejo al parecer algo extraño si pero adorable, te muestra cariño al principo y cada vez cada dia la cosa se pone mas y mas rara, como verte mientras duermes, buscar comida por la noche, como comer carne o fumar. la historia la creatura termina devorandote mientras aun estas vivo con la tetrica face de "Te quiero mucho".
+
+Background
+    La creatura es un arma biologica que fue vendida para desacerse de ella y no ser arrestados, las personas que las encuentran son tratadas como locas o que esa cosa esta generada por AI no es real.
+    por mas que las imagenes sean reales.
+    Al final las creaturas escapan y no se sabe que cosas podrian hacer.
+    Son depredadores apex insteligentes.
+
+Mecanicas
+
+    PERSPECTIVA Y MOVIMIENTO:
+    - Vista lateral 2D (estilo plataformero como Mario)
+    - El jugador se mueve solo horizontalmente (derecha o izquierda)
+    - Escenarios en capas de profundidad para dar sensacion de profundidad
+    - Transiciones suaves entre escenarios al llegar a los bordes
+
+    ESCENARIOS:
+    - Cuarto: Donde duermes y trabajas, contiene la computadora y la jaula de la creatura
+    - Cocina: Donde preparas comida para la creatura y para ti
+    - Pasillo/Area de transicion: Conecta el cuarto con la cocina, donde aparecen cartas y paquetes
+    - Todos los escenarios estan conectados horizontalmente, desplazandose solo a izquierda o derecha
+
+    INTERACCIONES:
+    - Sistema de interaccion con objetos en vista lateral
+    - Al acercarse a objetos interactuables, aparece indicador visual
+    - Interaccion con objetos clave: computadora, jaula, refrigerador, puerta, etc.
+
+    MECANICA DE PARPADEO (MECANICA CENTRAL - VERSION MVP SIMPLIFICADA):
+    
+    El parpadeo es la mecanica clave que crea los momentos mas terrorificos del juego.
+    Es el momento donde la creatura puede hacer cosas sin que el jugador las vea.
+    
+    FUNCIONAMIENTO BASICO (MVP):
+    - El jugador parpadea automaticamente cada 4 segundos (fijo, sin variacion)
+    - Transicion visual: Fade a negro simple (0.3 segundos)
+    - Durante el parpadeo, el tiempo del juego NO se pausa
+    - Implementacion simple: overlay de oscurecimiento con fade in/out
+    
+    QUE PUEDE PASAR DURANTE EL PARPADEO (MVP):
+    - Nivel 1: La creatura puede cambiar de posicion dentro de su jaula
+    - Nivel 2: La creatura puede moverse entre escenarios, aparecer en diferentes lugares
+    - Nivel 3: La creatura puede cambiar de posicion (acciones perturbadoras se muestran despues)
+    - Nivel 4: La creatura puede aparecer en posiciones diferentes o desaparecer
+    
+    MOMENTOS TERRORIFICOS ESPECIALES (POST-MVP):
+    - Parpadeos forzados: POST-MVP
+    - Parpadeos multiples: POST-MVP
+    - Parpadeo con sonido: Sonidos basicos en MVP, complejidad adicional POST-MVP
+    
+    INTEGRACION CON EL GAMEPLAY:
+    - La creatura siempre esta "activa" durante los parpadeos
+    - Los parpadeos son el momento perfecto para que la creatura ejecute sus triggers de movimiento
+    - El jugador nunca sabe si algo cambio durante el parpadeo hasta que abre los ojos
+    - Esto crea paranoia constante: "¿Estaba ahi antes? ¿Se movio?"
+    
+    USO EN EL FINAL (MVP):
+    - Durante el DIA 13, los parpadeos mantienen frecuencia normal (4 segundos)
+    - La creatura puede aparecer o desaparecer durante cada parpadeo
+    - Combinado con la linterna, crea momentos de terror: parpadeas, y cuando
+      abres los ojos, la creatura esta en una posicion diferente, o peor, mas cerca
+
+    SISTEMA DE LINTERNA (Final del juego):
+    - Se activa durante el DIA 13 cuando la creatura fuerza los apagones
+    - La linterna ilumina poco, creando una atmosfera tensa y limitando la vision
+    - La linterna esta fija al personaje y se mantiene en linea recta hacia donde miras
+    - La direccion de la linterna sigue la direccion del movimiento del personaje
+        * Si te mueves a la derecha, la linterna ilumina hacia la derecha
+        * Si te mueves a la izquierda, la linterna ilumina hacia la izquierda
+    - El cono de luz es limitado, solo ilumina un area pequeña frente al personaje
+    - Esto crea tension ya que no puedes ver lo que esta detras o a los lados
+    - La creatura puede aparecer en areas no iluminadas, creando momentos de terror
+    - La linterna ayuda a navegar en la oscuridad pero tambien limita tu vision periferica
+
+    TAREAS SECUNDARIAS - MINIJUEGOS:
+    - Trabajo en computadora: Minijuego sin final que simula tarea laboral
+        * Escribir texto (mecanografia simple)
+        * No tiene final, el jugador puede dejarlo cuando quiera
+    - Mientras haces esta tarea, la creatura puede hacer ruidos o requerir atencion
+    - El tiempo que pasas en el minijuego afecta indirectamente a la creatura (si la ignoras mucho tiempo)
+
+    SISTEMA DE INVESTIGACION (SIMPLIFICADO PARA MVP):
+    - Sistema de lectura de documentos desde la computadora en el cuarto
+    - Contenido: 3-5 entradas de foro con historias de otros dueños (texto simple)
+    - Contenido: 1-2 documentos clasificados (texto simple, sin puzzles complejos)
+    - Interfaz: Sistema de lectura similar a la nota de cuidados
+    - Los resultados de la investigacion se guardan y pueden ser consultados
+    - Nota: Sin mockups web complejos, solo texto con posible imagen estatica
+
+    SISTEMA DE TEXTO:
+    - Sistema para mostrar textos de cartas, libros o documentos encontrados
+    - Interfaz de lectura que permite pausar y continuar
+
+    NOTA DE CUIDADOS DE LA CREATURA:
+    - Al recibir el paquete en el DIA 1, viene incluida una nota con los cuidados adecuados
+    - La nota contiene informacion sobre como cuidar correctamente a la creatura:
+        * Tipo de comida adecuada (comida fresca, vegetales, etc.)
+        * Frecuencia de alimentacion
+        * Necesidad de atencion y interaccion
+        * Importancia de responder a sus llamados
+        * Advertencias sobre no ignorarla por periodos prolongados
+        * Informacion sobre su comportamiento normal
+    - Una vez tomada la nota, se guarda en el inventario del jugador
+    - El jugador puede consultar la nota en cualquier momento presionando un boton
+    - La nota se muestra en una interfaz de lectura que se puede abrir y cerrar
+    - Consultar la nota no pausa el juego, el tiempo sigue pasando y la creatura puede hacer cosas
+    - La nota sirve como guia para que el jugador sepa como cuidar bien a la creatura
+    - Si el jugador sigue las instrucciones de la nota, aumentara el Afecto
+    - Si ignora las instrucciones, aumentara el Resentimiento
+
+    TRIGGERS DE LA CREATURA:
+    - La creatura ejecuta sus acciones por triggers para ahorrar costes
+    - Los triggers se activan segun el nivel de evolucion, afecto/resentimiento y tiempo transcurrido
+    - La creatura realiza acciones para incomodar al jugador o moverse por los escenarios
+
+    SISTEMA DE TIEMPO Y PACING:
+
+    DURACION POR DIA (Tiempo de juego real - OPTIMIZADO PARA MVP):
+    - DIA 1 - Llegada: 5 minutos
+    - DIA 2-3 - Primeras Interacciones: 8 minutos cada uno (16 minutos total)
+    - DIA 4-5 - Necesidades Basicas: 10 minutos cada uno (20 minutos total)
+    - DIA 6-10 - Investigacion y Evolucion: 10 minutos cada uno (50 minutos total)
+    - DIA 11-13 - Descubrimiento y Final: 12 minutos cada uno (36 minutos total)
+    - DIA 13 - Final (secuencia final): 5 minutos adicionales
+    - TOTAL ESTIMADO: ~132 minutos (aproximadamente 2.2 horas de juego)
+    - Nota: Duracion reducida para optimizar tiempo de desarrollo sin sacrificar experiencia
+
+    ESCALA DE TIEMPO:
+    - Tiempo de juego: Tiempo real (1 segundo real = 1 segundo de juego)
+    - No hay aceleracion temporal
+    - El tiempo avanza constantemente excepto cuando se pausa explicitamente
+
+    SISTEMA DE PAUSA:
+    - Pausa completa (ESC): Pausa todo el juego, incluyendo tiempo, creatura, y sistemas
+    - Durante interacciones (computadora, lectura): NO pausa, el tiempo sigue avanzando
+    - Consultar nota de cuidados: NO pausa, el tiempo sigue avanzando
+    - Durante parpadeos: NO pausa, el tiempo sigue avanzando
+    - Menu de pausa permite: Guardar, Cargar, Configuracion, Salir
+
+    TIMING DE TRIGGERS DE LA CREATURA:
+    - Nivel 1 (Bebe): Triggers cada 2-3 minutos (tiempo aleatorio dentro del rango)
+    - Nivel 2 (Joven): Triggers cada 1.5-2 minutos
+    - Nivel 3 (Adulto): Triggers cada 1-1.5 minutos
+    - Nivel 4 (Evolucionado): Triggers cada 30 segundos - 1 minuto
+    - Los triggers se activan basados en:
+        * Tiempo transcurrido desde el ultimo trigger
+        * Nivel de evolucion actual
+        * Estado de Afecto/Resentimiento
+        * Proximidad del jugador a la creatura
+        * Si el jugador esta en una interaccion (mayor probabilidad)
+
+    FRECUENCIA DE EVENTOS ALEATORIOS:
+    - Eventos menores (ruidos, movimientos): Cada 30-60 segundos (según nivel)
+    - Eventos medios (acciones visibles): Cada 2-4 minutos (según nivel)
+    - Eventos mayores (acciones perturbadoras): Cada 5-8 minutos (solo Nivel 3+)
+    - Eventos de ruta (específicos por evolución): Cada 3-5 minutos (solo Nivel 4)
+
+    TIMELINE COMPLETO DEL GAMELOOP:
+    
+    DIA 1 (0:00 - 5:00):
+    - 0:00-1:00: Llegada del paquete, tomar nota
+    - 1:00-3:00: Primera interaccion con creatura (Nivel 1)
+    - 3:00-5:00: Exploracion inicial, familiarizacion con controles
+
+    DIA 2-3 (5:00 - 21:00):
+    - 5:00-13:00: DIA 2 - Trabajo en computadora, primera decision critica
+    - 13:00-21:00: DIA 3 - Continuacion, mas interacciones, creatura empieza a hacer ruidos
+
+    DIA 4-5 (21:00 - 41:00):
+    - 21:00-31:00: DIA 4 - Necesidades basicas, segunda decision critica
+    - 31:00-41:00: DIA 5 - Continuacion, creatura evoluciona a Nivel 2
+
+    DIA 6-10 (41:00 - 91:00) - OPTIMIZADO:
+    - 41:00-51:00: DIA 6 - Carta de advertencia, inicio de investigacion
+    - 51:00-61:00: DIA 7 - Investigacion continua, tercera decision critica
+    - 61:00-71:00: DIA 8 - Patron de comportamiento se establece
+    - 71:00-81:00: DIA 9 - Creatura evoluciona a Nivel 3
+    - 81:00-91:00: DIA 10 - Comportamiento perturbador aumenta
+
+    DIA 11-13 (91:00 - 127:00) - OPTIMIZADO:
+    - 91:00-103:00: DIA 11 - Descubrimiento de verdad, creatura evoluciona a Nivel 4
+    - 103:00-115:00: DIA 12 - Comportamiento extremo segun ruta
+    - 115:00-127:00: DIA 13 - Secuencia final con linterna (5 minutos adicionales = 132 minutos total)
+
+    SISTEMA DE GUARDADO Y PROGRESION:
+
+    CHECKPOINTS AUTOMATICOS:
+    - Al finalizar cada dia (transicion entre dias)
+    - Despues de decisiones criticas
+    - Cada 10 minutos de juego (backup automatico)
+    - Al cambiar de nivel de evolucion
+    - Al cambiar de escenario (transicion entre escenarios)
+
+    GUARDADO MANUAL (POST-MVP):
+    - Para MVP: Solo checkpoints automaticos
+    - Guardado manual con multiples slots se implementara post-MVP
+    - Nota: Esto reduce tiempo de desarrollo sin afectar la experiencia core
+
+    ESTRUCTURA DE DATOS A GUARDAR:
+    - Estado del jugador:
+        * Posicion actual (escenario, coordenadas)
+        * Inventario (nota de cuidados obtenida)
+        * Progreso de investigacion (documentos desbloqueados)
+    - Estado de la creatura:
+        * Nivel de evolucion actual
+        * Valor de Afecto
+        * Valor de Resentimiento
+        * Ruta evolutiva actual (si ya se determino)
+        * Posicion actual
+        * Estado actual (en jaula, fuera, etc.)
+    - Estado del mundo:
+        * Dia actual
+        * Tiempo transcurrido en el dia actual
+        * Eventos ya ocurridos (para evitar repeticion)
+        * Estado de objetos interactuables
+        * Mensajes escritos en paredes (si aplica)
+    - Estado del sistema:
+        * Ultimo checkpoint
+        * Tiempo total de juego
+        * Configuraciones del jugador
+
+    CARGA DE PARTIDA:
+    - Desde menu principal: "Continuar" carga el ultimo checkpoint automatico
+    - Para MVP: Solo un checkpoint automatico (sin slots multiples)
+    - Al cargar, se restaura todo el estado del juego exactamente como estaba
+    - La creatura mantiene su comportamiento segun el estado guardado
+
+    MANEJO DE PARTIDAS MULTIPLES (POST-MVP):
+    - Sistema de slots multiples se implementara post-MVP
+    - MVP solo tiene un checkpoint automatico
+
+    CONSIDERACIONES ECS PARA SERIALIZACION:
+    - Serializar componentes relevantes: AffectionComponent, ResentmentComponent,
+      EvolutionLevelComponent, PositionComponent, StateComponent
+    - Guardar estado de sistemas: TimeSystem, EvolutionSystem, TriggerSystem
+    - Serializar entidades: Player, Creature, InteractableObjects
+    - Usar formato JSON o binario para guardado rapido
+    - Validar datos al cargar para evitar corrupcion
+
+    UMBRALES Y VALORES ESPECIFICOS (SIMPLIFICADOS):
+
+    UMBRALES PARA CAMBIO DE NIVEL DE EVOLUCION:
+    - Nivel 1 -> Nivel 2: Al completar DIA 2 (automatico)
+    - Nivel 2 -> Nivel 3: Al completar DIA 5 (automatico)
+    - Nivel 3 -> Nivel 4: Al completar DIA 10 (automatico)
+    - Nota: Los niveles avanzan con el tiempo, no requieren interacciones minimas
+
+    UMBRALES PARA RUTAS EVOLUTIVAS (SIMPLIFICADOS):
+    - Ruta de Obsesion (A > R):
+        * Condicion: Afecto > Resentimiento + 10 puntos (al llegar a Nivel 4)
+        * Se determina automaticamente al alcanzar Nivel 4
+    - Ruta de Sadismo (R > A):
+        * Condicion: Resentimiento > Afecto + 10 puntos (al llegar a Nivel 4)
+        * Se determina automaticamente al alcanzar Nivel 4
+    - Ruta Balanceada (A ≈ R):
+        * Condicion: Diferencia absoluta entre A y R <= 10 puntos (al llegar a Nivel 4)
+        * Se determina automaticamente si no cumple las otras condiciones
+
+    VALORES DE DECAY/REGENERACION (SIMPLIFICADOS):
+    - Si no hay interaccion por 10 minutos consecutivos:
+        * -1 Afecto, +1 Resentimiento (una vez cada 10 minutos)
+    - No hay regeneracion pasiva automatica (solo por interacciones directas)
+
+    CONDICIONES ESPECIFICAS PARA TRIGGERS:
+    - Trigger de "Hacer ruido" (Nivel 1-4):
+        * Probabilidad base: 30% cada minuto
+        * Aumenta a 50% si no se ha atendido en ultimos 3 minutos
+        * Aumenta a 70% si Resentimiento > Afecto + 5
+    - Trigger de "Accion visible" (Nivel 2-4):
+        * Probabilidad base: 20% cada 2 minutos
+        * Solo si el jugador NO esta mirando directamente
+        * Aumenta con nivel de evolucion
+    - Trigger de "Accion perturbadora" (Nivel 3-4):
+        * Probabilidad base: 15% cada 3 minutos
+        * Solo en Nivel 3 o superior
+        * Aumenta si Resentimiento es alto
+    - Trigger de "Accion de ruta" (Nivel 4):
+        * Probabilidad base: 25% cada 2 minutos
+        * Solo en Nivel 4
+        * Depende de la ruta evolutiva confirmada
+
+    TABLA DE PROBABILIDADES PARA EVENTOS ALEATORIOS:
+    - Evento "Ruido desde jaula": 30-50% (según tiempo sin atención)
+    - Evento "Movimiento visible": 20-30% (según nivel)
+    - Evento "Accion rara": 15-25% (solo Nivel 2+)
+    - Evento "Accion perturbadora": 10-20% (solo Nivel 3+)
+    - Evento "Accion de ruta": 25-35% (solo Nivel 4, según ruta)
+    - Evento "Parpadeo con cambio": 40% (cada parpadeo tiene 40% de cambiar algo)
+
+    ARQUITECTURA ECS - ESPECIFICACIONES:
+
+    COMPONENTES PRINCIPALES NECESARIOS:
+
+    Componentes del Jugador:
+    - PositionComponent: Posicion 2D (x, y), direccion (izquierda/derecha)
+    - PlayerStateComponent: Estado actual (caminando, idle, interactuando, pausado)
+    - InteractionComponent: Objeto con el que esta interactuando (si aplica)
+    - InventoryComponent: Items en inventario (nota de cuidados)
+    - PlayerDataComponent: Datos del jugador (tiempo jugado, dia actual)
+
+    Componentes de la Creatura:
+    - CreaturePositionComponent: Posicion 2D, escenario actual
+    - AffectionComponent: Valor de Afecto (int), historial de cambios
+    - ResentmentComponent: Valor de Resentimiento (int), historial de cambios
+    - EvolutionLevelComponent: Nivel actual (1-4), progreso hacia siguiente nivel
+    - EvolutionRouteComponent: Ruta actual (Obsesion/Sadismo/Balanceada, null si no determinado)
+    - CreatureStateComponent: Estado actual (en jaula, fuera, haciendo accion, etc.)
+    - CreatureBehaviorComponent: Comportamiento actual, proxima accion programada
+    - TriggerTimerComponent: Tiempo desde ultimo trigger, tiempo hasta proximo trigger
+
+    Componentes de Objetos Interactuables:
+    - InteractableComponent: Tipo de objeto, si esta activo, rango de interaccion
+    - ObjectStateComponent: Estado del objeto (abierto/cerrado, usado/no usado, etc.)
+
+    Componentes del Sistema:
+    - TimeComponent: Tiempo actual del dia, tiempo total transcurrido, escala de tiempo
+    - GameStateComponent: Estado del juego (jugando, pausado, en menu, en final)
+    - SaveDataComponent: Datos necesarios para guardado (checkpoint, slot, etc.)
+    - SceneComponent: Escenario actual, escenarios desbloqueados
+
+    Componentes de Eventos:
+    - TriggerComponent: Tipo de trigger, condiciones de activacion, probabilidad
+    - EventComponent: Evento actual activo, tiempo de duracion, efectos
+
+    SISTEMAS REQUERIDOS:
+
+    Sistemas de Gameplay:
+    - PlayerMovementSystem: Maneja movimiento horizontal del jugador
+    - InteractionSystem: Maneja interacciones con objetos y la creatura
+    - CreatureBehaviorSystem: Controla comportamiento y acciones de la creatura
+    - AffectionSystem: Calcula y actualiza valores de Afecto/Resentimiento
+    - EvolutionSystem: Maneja evolucion de niveles y determinacion de rutas
+    - TriggerSystem: Activa triggers de la creatura segun condiciones
+
+    Sistemas de Tiempo:
+    - TimeSystem: Maneja tiempo de juego, pausa, escala de tiempo
+    - DayProgressionSystem: Controla progresion entre dias, eventos por dia
+    - DecaySystem: Aplica decay/regeneracion de Afecto/Resentimiento con tiempo
+
+    Sistemas de Guardado:
+    - SaveSystem: Serializa y guarda estado del juego
+    - LoadSystem: Deserializa y carga estado del juego
+    - CheckpointSystem: Maneja checkpoints automaticos
+
+    Sistemas de Renderizado:
+    - SpriteRenderSystem: Renderiza sprites 2D del jugador y creatura
+    - AnimationSystem: Maneja animaciones (4-6 cuadros por accion)
+    - BlinkSystem: Maneja mecanica de parpadeo
+    - FlashlightSystem: Maneja sistema de linterna en el final
+
+    Sistemas de UI:
+    - UISystem: Maneja interfaces (nota, menus, pausa)
+    - TextDisplaySystem: Muestra textos de cartas, documentos
+    - FeedbackSystem: Muestra feedback ambiental (sin UI visible)
+
+    ENTIDADES DEL JUEGO:
+
+    Entidades Principales:
+    - PlayerEntity: Entidad del jugador con componentes de posicion, estado, inventario
+    - CreatureEntity: Entidad de la creatura con todos sus componentes de estado
+    - CameraEntity: Entidad de la camara (sigue al jugador en vista lateral)
+
+    Entidades de Escenarios:
+    - RoomEntity: Entidad del cuarto con componentes de escenario
+    - KitchenEntity: Entidad de la cocina
+    - HallwayEntity: Entidad del pasillo/area de transicion
+
+    Entidades de Objetos:
+    - ComputerEntity: Computadora interactuable
+    - CageEntity: Jaula de la creatura
+    - RefrigeratorEntity: Refrigerador interactuable
+    - NoteEntity: Nota de cuidados (objeto interactuable inicial)
+
+    Entidades de Sistema:
+    - GameManagerEntity: Maneja estado general del juego
+    - TimeManagerEntity: Maneja tiempo y progresion
+    - SaveManagerEntity: Maneja guardado y carga
+
+    CONSIDERACIONES DE PERFORMANCE:
+
+    Optimizaciones ECS:
+    - Usar Entity Component System nativo de Unity (DOTS) o framework similar
+    - Agrupar componentes relacionados en chunks de memoria para cache efficiency
+    - Sistemas se ejecutan solo cuando hay entidades con componentes requeridos
+    - Usar Job System para sistemas que pueden paralelizarse (calculos de triggers)
+
+    Rendimiento Esperado:
+    - 60 FPS en PC (target)
+    - Sistemas de gameplay: Ejecutarse cada frame
+    - Sistemas de tiempo: Ejecutarse cada segundo (no cada frame)
+    - Sistemas de triggers: Ejecutarse segun timing definido (no cada frame)
+    - Sistema de guardado: Ejecutarse solo cuando es necesario (async)
+
+    Estructura de Datos para Guardado en ECS:
+    - Serializar solo componentes que necesitan persistencia
+    - Usar identificadores unicos para entidades (EntityID)
+    - Guardar relaciones entre entidades (referencias)
+    - Validar integridad de datos al cargar
+    - Versionar formato de guardado para compatibilidad futura
+
+    SISTEMA DE EVOLUCION Y AFECTO (SIMPLIFICADO):
+    
+    La creatura tiene un sistema de estadisticas ocultas que determinan su evolucion:
+    Sistema simplificado con valores directos y claros.
+    
+    - Afecto (A): Rango 0-100, se incrementa cuando:
+        * Le das comida fresca y adecuada: +2 Afecto
+        * Le prestas atencion cuando hace ruidos: +1 Afecto
+        * La acaricias o interactuas positivamente: +1 Afecto
+        * Respondes rapidamente a sus llamados (menos de 1 minuto): +2 Afecto
+        * La dejas salir y la guardas correctamente: +2 Afecto
+    
+    - Resentimiento (R): Rango 0-100, se incrementa cuando:
+        * La ignoras cuando hace ruidos: +2 Resentimiento
+        * Le das comida podrida o inadecuada: +3 Resentimiento
+        * No respondes a sus necesidades: +2 Resentimiento
+        * La dejas salir y NO la guardas: +3 Resentimiento
+        * La descuidas por completo (10+ minutos sin atencion): +3 Resentimiento
+    
+    - Nivel de Evolucion (E): Aumenta automaticamente con el tiempo
+        * Nivel 1: Bebe (Dias 1-2) - Comportamiento normal, acciones tiernas
+        * Nivel 2: Joven (Dias 3-5) - Comienza acciones raras, muestra inteligencia basica
+        * Nivel 3: Adulto (Dias 6-10) - Acciones perturbadoras, inteligencia avanzada
+        * Nivel 4: Evolucionado (Dias 11-13) - Comportamiento extremo segun ruta
+    
+    CONSECUENCIAS ESPECIFICAS DE ACCIONES (SIMPLIFICADAS):
+    
+    ALIMENTACION:
+    - Comida fresca y adecuada: +2 Afecto
+    - Comida podrida o inadecuada: +3 Resentimiento
+    - No alimentar cuando tiene hambre: +2 Resentimiento
+    
+    ATENCION Y RESPUESTA:
+    - Responder rapido (menos de 1 minuto): +2 Afecto
+    - Responder tarde (mas de 1 minuto): +1 Afecto
+    - Ignorar completamente: +2 Resentimiento
+    - Acariciar: +1 Afecto
+    
+    JAULA Y LIBERTAD:
+    - Dejar salir y guardar correctamente: +2 Afecto
+    - Dejar salir y NO guardar: +3 Resentimiento
+    - No dejarla salir nunca: +1 Resentimiento cada 5 minutos
+    
+    NEGLIGENCIA:
+    - 10+ minutos sin atencion: +3 Resentimiento
+    - Comportamiento: La creatura se vuelve agresiva, acelera Ruta Sadismo
+    
+    CUIDADO EXCESIVO:
+    - Responder inmediatamente a TODO: +2 Afecto por interaccion
+    - Comportamiento: Acelera Ruta de Obsesion
+    
+    RUTAS EVOLUTIVAS (MVP - 2 RUTAS):
+    
+    Ruta de Obsesion (A > R + 10) - MVP:
+        - La creatura desarrolla una obsesion enfermiza contigo
+        - Te ve como su unica posesion valiosa
+        - Acciones: Escribir frases posesivas en las paredes, aparecer constantemente en tu
+          campo de vision, bloquear salidas de manera sistematica
+        - Final: Te ataca para "protegerte" de cualquier amenaza externa, asegurandose
+          de que nunca te separes de ella
+    
+    Ruta de Sadismo (R > A + 10) - MVP:
+        - La creatura desarrolla resentimiento y deseo de venganza
+        - Te ve como su opresor y quiere hacerte sufrir
+        - Acciones: Escribir mensajes de amenaza, sabotear sistematicamente tus objetos,
+          aparecer y desaparecer para maximizar tension
+        - Final: Te acorrala y ataca de manera calculada, prolongando el sufrimiento
+          para maximizar tu miedo y dolor
+    
+    Ruta Balanceada (A ≈ R) - POST-MVP:
+        - La creatura esta confundida entre apego y resentimiento
+        - Comportamiento impredecible debido al conflicto interno
+        - Acciones: Alterna entre comportamientos que sugieren apego y acciones que sugieren
+          resentimiento, creando una atmosfera de incertidumbre constante
+        - Final: Te ataca en un momento de decision impulsiva, sin la precision calculada
+          de las otras rutas, pero igualmente letal
+        - Nota: Esta ruta se implementara post-MVP para reducir testing y balance
+
+
+    PAGINAS WEB (Sistema de Investigacion - SIMPLIFICADO):
+
+        Para MVP: Sistema de lectura de texto simple (similar a nota de cuidados)
+        - No requiere mockups web complejos
+        - Transiciones simples entre documentos
+        - Los triggers de la creatura siguen funcionando (cuando investigas,
+          la creatura puede hacer cosas en segundo plano)
+
+        Contenido simplificado:
+        - 3-5 entradas de foro con historias de otros dueños (texto simple, posible imagen estatica)
+        - 1-2 documentos clasificados (texto simple, sin puzzles complejos)
+        - Nota: Puzzles y navegacion compleja se pueden agregar post-MVP
+
+
+        Plataformas
+        PC(Principalmente) y Android(secundario)
+
+Animaciones (OPTIMIZADAS PARA MVP - REDUCIDAS):
+    La mascota puede realizar las siguientes acciones (3 animaciones por nivel para optimizar desarrollo):
+    
+    Normal (Nivel 1) - 3 animaciones:
+    - Dormir en posiciones naturales
+    - Observar al jugador con curiosidad animal
+    - Comer comida de manera normal
+    - Nota: Acicalarse y explorar se pueden simular con variaciones de las 3 animaciones base
+
+    Raras (Nivel 2) - 3 animaciones:
+    - Observar al jugador de manera demasiado prolongada y fija
+    - Manipular objetos con sus patas delanteras de forma inusualmente habil
+    - Escribir garabatos o marcas en superficies con sus garras
+    - Nota: Sonidos se pueden agregar como audio sin animacion adicional
+
+    Perturbadoras (Nivel 3) - 3 animaciones:
+    - Escribir palabras o frases completas en las paredes con sus garras
+    - Observar al jugador desde lugares donde no deberia poder estar
+    - Manipular objetos peligrosos (cuchillos, herramientas) con precision
+    - Nota: Sabotear y aparecer en lugares inaccesibles se pueden lograr con triggers de posicion
+
+    Acciones Especificas por Ruta Evolutiva (Nivel 4 - 3 animaciones por ruta):
+    
+    Ruta de Obsesion (Nivel 4) - 3 animaciones:
+    - Escribir frases posesivas en las paredes: "Solo mio", "Eres mio", "Nunca te dejare ir"
+    - Aparecer constantemente en el campo de vision del jugador (animacion de observacion intensa)
+    - Bloquear salidas de manera sutil (animacion de bloqueo/movimiento)
+    - Nota: Destruir/esconder objetos y forma evolucionada se logran con triggers y variaciones de escala
+    - Forma evolucionada: Variaciones de escala y postura usando las animaciones base
+    
+    Ruta de Sadismo (Nivel 4) - 3 animaciones:
+    - Escribir mensajes de amenaza y resentimiento en las paredes
+    - Observar al jugador con una mirada calculadora y predadora
+    - Aparecer y desaparecer de manera que maximiza la tension psicologica
+    - Nota: Sabotear y crear situaciones peligrosas se logran con triggers de objetos, no requieren animaciones
+    - Forma evolucionada: Variaciones de postura y velocidad usando las animaciones base
+
+    DISEÑO VISUAL Y ESTILO ARTISTICO (OPTIMIZADO PARA VIABILIDAD):
+    
+    ESTILO VISUAL GENERAL (SIMPLIFICADO - TODO 2D):
+    - Ambiente: 2D con capas de profundidad (parallax scrolling) - estilo ilustrado o pixel art
+    - Personajes: Sprites 2D (pixel art o vectorial simple)
+    - Contraste: El ambiente 2D pastel crea un contraste inquietante con el terror psicologico
+    - Atmosfera: Los tonos pastel inicialmente parecen inocentes, pero se vuelven mas inquietantes
+      conforme avanza el juego
+    - Nota: Sin necesidad de integracion 2D/3D compleja - todo en 2D simplifica desarrollo
+    
+    AMBIENTE 2D (TONOS PASTEL):
+    - Escenarios dibujados en 2D con estilo ilustrado o pixel art
+    - Paleta de colores: Tonos pastel suaves (rosas, azules claros, verdes suaves, amarillos palidos)
+    - Profundidad: Capas de parallax scrolling para dar sensacion de espacio en vista lateral
+    - Iluminacion: Efectos de iluminacion 2D (shaders simples) para crear atmosfera
+    - Objetos: Muebles y objetos interactuables en 2D con el mismo estilo pastel
+    - Ventaja: Mas rapido de desarrollar que 3D, mismo efecto visual
+    
+    PERSONAJES 2D (OPTIMIZADO):
+    - El jugador: Sprite 2D (pixel art con Aseprite o vectorial simple)
+    - La creatura: Sprite 2D (pixel art o vectorial simple)
+    - Estilo: Pixel art (mas rapido) o vectorial simple (lineas limpias)
+    - Herramientas: Aseprite (pixel art) o Clip Studio/Illustrator (vectorial)
+    - Animaciones: 4 cuadros por accion, usando herramientas de animacion (DragonBones, Spine)
+    - Frame rate: Animaciones a 15 fps por fotograma a doble cuadro
+    - La creatura se mueve horizontalmente por los escenarios, apareciendo en diferentes posiciones
+    - El jugador puede interactuar con la creatura (acariciarla, darle comida) cuando esta cerca
+    
+    CONTRASTE Y TENSION VISUAL:
+    - El contraste entre el ambiente pastel 2D y el terror psicologico crea tension
+    - Los personajes 2D se destacan del ambiente, enfocando la atencion
+    - A medida que avanza el juego, los tonos pastel pueden volverse mas oscuros o saturados
+    - La creatura tiene mas presencia visual siendo el foco principal
+    
+    ANIMACIONES DEL PERSONAJE (OPTIMIZADAS):
+    - Caminar izquierda (4 cuadros)
+    - Caminar derecha (4 cuadros)
+    - Idle/Parado (4 cuadros)
+    - Interactuar (4 cuadros)
+    - Usar linterna (variacion de idle, no requiere animacion separada)
+    
+    ANIMACIONES DE LA CREATURA (OPTIMIZADAS):
+    - Todas las acciones tienen 4 cuadros de animacion (reducido de 4-6 para optimizar)
+    - Las animaciones se reutilizan y combinan para crear variedad con pocos recursos
+    - Variaciones visuales se logran con efectos de partículas, shaders, y cambios de escala/posicion
+
+    MOVIMIENTO DE LA CREATURA:
+    - La creatura puede moverse horizontalmente por los escenarios
+    - Aparece en diferentes posiciones dentro del mismo escenario o entre escenarios
+    - Sus movimientos son calculados y pueden ser rapidos o sigilosos segun la ruta evolutiva
+    - Durante los parpadeos, la creatura puede cambiar de posicion sin que el jugador lo vea
+
+    Transiciones suaves entre escenarios y acciones
+
+ESCENARIOS (Vista Lateral 2D):
+
+    CUARTO:
+    - Escenario principal donde duermes y trabajas
+    - Contiene: Cama, escritorio con computadora, jaula de la creatura, mesa de luz
+    - La creatura puede estar en su jaula o moverse por el cuarto
+    - Lugares donde la creatura puede estar:
+        * En su jaula (posicion inicial)
+        * En el suelo cerca de la cama
+        * Cerca del escritorio
+
+    COCINA:
+    - Area donde preparas comida
+    - Contiene: Refrigerador, estufa, mesa de cocina, alacenas
+    - Lugares donde la creatura puede estar:
+        * En la mesa de la cocina
+        * Cerca del refrigerador
+        * En el suelo de la cocina
+
+    PASILLO/AREA DE TRANSICION:
+    - Conecta el cuarto con la cocina
+    - Contiene: Area para recibir paquetes y cartas
+    - Es donde aparecen las cartas y paquetes
+    - La creatura raramente va aqui, pero puede aparecer en niveles avanzados
+
+    CONEXION ENTRE ESCENARIOS:
+    - Todos los escenarios estan conectados horizontalmente
+    - Orden: Pasillo -> Cuarto -> Cocina (o variaciones segun diseño)
+    - Al llegar al borde izquierdo o derecho de un escenario, se transiciona al siguiente
+    - Transiciones suaves con fade o desplazamiento de camara
+
+ESTILO Y ATMOSFERA:
+    - Terror psicologico desde el principio, pero sutil
+    - El contraste entre ambiente pastel 3D y personajes 2D dibujados a mano crea inquietud
+    - La atmosfera se vuelve progresivamente mas tetrica conforme avanza el juego
+    - Los tonos pastel inicialmente parecen inocentes, pero se vuelven mas inquietantes
+    - El estilo visual refuerza la sensacion de que algo esta "mal" desde el inicio
+
+
+GameLoop
+
+    DIA 1 - Llegada:
+    Te llega el paquete y lo deja en una mesa de luz con su jaula envuelta, con una nota de que compro y que le pide que el ser tiene cuidado especiales, cualquier duda puede visitar el sitio de la pagina.
+    Dentro del paquete hay una NOTA DE CUIDADOS detallada con las instrucciones para cuidar adecuadamente a la creatura.
+    El jugador debe tomar la nota (interactuar con ella) para guardarla en su inventario.
+    Una vez tomada, la nota puede ser consultada en cualquier momento presionando el boton asignado.
+    Al principio esta normal la creatura haciendo acciones tiernas (Nivel 1).
+    El jugador puede interactuar: Acariciarla (+Afecto), Ignorarla (+Resentimiento), o Darle comida (+Afecto si es buena, +Resentimiento si es mala).
+    La nota de cuidados indica que debes darle comida fresca, prestarle atencion cuando hace ruidos, y no ignorarla por mucho tiempo.
+
+    DIA 2-3 - Primeras Interacciones:
+    El jugador puede trabajar en su computadora (minijuego de escribir texto sin final).
+    Mientras trabajas, la creatura empieza a hacer ruidos desde su jaula.
+    Debes dejar lo que estas haciendo y moverte horizontalmente hacia la jaula para ver que hace.
+    PRIMERA DECISION CRITICA: 
+        - Responder rapido y con atencion (+Afecto)
+        - Ignorar el ruido (+Resentimiento)
+        - Ir pero enojado/irritado (+Resentimiento)
+    
+    La creatura reacciona segun tu respuesta:
+        - Si respondiste bien: Se acerca a ti de manera amigable, muestra comportamiento de apego
+        - Si la ignoraste: Se aleja, pero observa desde la distancia con una mirada que sugiere
+          que esta procesando el rechazo
+        - Si fuiste enojado: Se retrae inmediatamente, pero mantiene contacto visual que sugiere
+          que esta evaluando la amenaza
+
+    DIA 4-5 - Necesidades Basicas:
+    La creatura vuelve a hacer ruido (hambre o atencion).
+    SEGUNDA DECISION CRITICA:
+        - Dar comida fresca y adecuada (+Afecto)
+        - Dar comida podrida o inadecuada (+Resentimiento)
+        - Ignorar completamente (+Resentimiento)
+    
+    Le das de comer y regresas. El proceso continua ahora haciendo acciones mas raras (Nivel 2):
+        - Manipular objetos de manera que sugiere comprension de su funcion
+        - Hacer sonidos que parecen intentar comunicarse
+        - Observar al jugador de manera mas intensa y prolongada
+        - Intentar imitar acciones basicas que ve hacer al jugador
+
+    DIA 6-10 - Investigacion y Evolucion:
+    Una carta aparece en el pasillo/area de transicion y esta dice: "Matala ahora que puedes".
+    Esto activa la curiosidad del jugador para buscar informacion.
+    El jugador puede investigar desde la computadora en el cuarto.
+    Busca informacion en sitios web simulados (puzzles en computadora):
+        - Foros de internet (historias de otros dueños)
+        - Documentos clasificados (puzzles basicos)
+    
+    Durante este proceso, puedes alternar entre:
+        - Trabajar en el minijuego de escribir texto
+        - Investigar sobre las creaturas
+        - Atender a la creatura cuando hace ruidos
+    
+    El animal pide comida o atencion constantemente, requiriendo que te muevas
+    horizontalmente entre escenarios para atenderla.
+    TERCERA DECISION CRITICA - Patron de comportamiento:
+        - Atender siempre (+Afecto) -> Ruta Obsesion
+        - Ignorar siempre (+Resentimiento) -> Ruta Sadismo
+        - Alternar (+Afecto y +Resentimiento) -> Ruta Balanceada
+    
+    Las cosas raras pasan a ser mas perturbadoras (Nivel 3):
+        - Escribir palabras o frases en las paredes con sus garras
+        - Comportamiento que sugiere amenaza calculada (si Ruta Sadismo)
+        - Comportamiento posesivo y territorial (si Ruta Obsesion)
+        - Aparecer en lugares donde no deberia poder estar
+        - Manipular objetos peligrosos con precision
+
+    DIA 11-13 - Descubrimiento y Final:
+    Al averiguar que lo que tienes es un arma biologica, la creatura ha evolucionado completamente (Nivel 4).
+    
+    Comportamiento segun ruta:
+        - Ruta Obsesion: Comunicacion que sugiere posesion extrema, escribe frases posesivas
+          en todas partes, bloquea salidas de manera sistematica, observa constantemente
+        - Ruta Sadismo: Comportamiento que sugiere venganza calculada, sabotaje sistematico,
+          mensajes de amenaza, crea situaciones de peligro
+        - Ruta Balanceada: Comportamiento impredecible, alterna entre gestos que sugieren
+          apego y acciones que sugieren resentimiento, creando confusion constante
+
+    DIA 13 - Final:
+    La creatura fuerza apagones para poder aterrarte.
+    La pantalla se oscurece completamente, limitando tu vision.
+    Se activa el sistema de linterna: una linterna fija al personaje que ilumina poco
+    y solo en la direccion hacia donde te mueves (derecha o izquierda).
+    En ese momento debes moverte horizontalmente hacia la cocina para buscar un cuchillo
+    (falsa esperanza de defensa).
+    La linterna te permite navegar pero limita tu vision, creando tension constante.
+    La creatura puede aparecer en cualquier escenario durante este proceso, especialmente
+    en areas no iluminadas por la linterna.
+    
+    FINALES SEGUN RUTA (SIMPLIFICADO PARA MVP):
+    
+    Final Base (Comun para ambas rutas - MVP):
+        La luz se apaga (pantalla oscura). Se activa la linterna, iluminando solo hacia
+        donde te mueves. Intentas moverte horizontalmente con la linterna, pero la creatura
+        aparece bloqueando tu camino en areas no iluminadas o justo al borde de la luz.
+        La creatura se mueve con precision calculada en vista lateral, apareciendo desde
+        diferentes posiciones horizontales, aprovechando las areas oscuras que la linterna
+        no alcanza.
+        Te inmoviliza con su forma evolucionada, mas grande y fuerte.
+        La creatura se queda cerca de tu cuerpo, en una posicion final.
+    
+    Variaciones por Ruta (MVP):
+        - Ruta Obsesion: Sonidos que sugieren palabras: "Nunca te dejare ir... Eres solo mio..."
+          y "Te quiero mucho... Ahora somos uno". Posicion final sugiere "cuidandote".
+        - Ruta Sadismo: Sonidos que sugieren satisfaccion y pasos calculados. Posicion final
+          sugiere venganza completada. Ataque mas prolongado visualmente.
+        - Nota: Secuencia base identica, solo cambian sonidos, texto, y posicion final
+          (reduciendo desarrollo de secuencias completamente diferentes)
+    
+    Final Balanceado - POST-MVP:
+        Secuencia completamente diferente con comportamiento erratico. Se implementara post-MVP.
+
+    
+
+Motivacion del player
+    Resolver el misterio de que es este ser y como se puede desacer de el.
+    Descubrir la verdad sobre la creatura antes de que sea demasiado tarde.
+    (Nota: No hay forma de escapar, pero el jugador no lo sabe hasta el final)
+
+Sistema de Feedback al Jugador:
+    - La creatura muestra expresiones diferentes segun el afecto/resentimiento
+    - Los mensajes en las paredes cambian segun la ruta
+    - El comportamiento general de la creatura indica la ruta tomada
+    - No hay UI visible de estadisticas (todo es sutil y ambiental)
+
+
+Programas
+    Unity, toon boon Harmony, clip studio, maya para los modelos 3d, android sdk, ads(google adsense)
+
+CONTROLES:
+
+    PC:
+    - Flechas izquierda/derecha o A/D: Mover al jugador horizontalmente
+    - Espacio o E: Interactuar con objetos (computadora, jaula, refrigerador, etc.)
+    - N o T: Consultar nota de cuidados (abre/cierra la interfaz de la nota)
+    - ESC: Pausa o cerrar menus/interfaces
+
+    MOVIL/ANDROID:
+    - Botones virtuales izquierda/derecha en pantalla: Mover al jugador horizontalmente
+    - Tap en objetos interactuables: Interactuar
+    - Boton de nota en la UI: Consultar nota de cuidados (abre/cierra la interfaz)
+    - Boton de menu: Pausa o cerrar interfaces
+    - UI para volver atras en menus de investigacion
+
+    INTERACCIONES:
+    - Al acercarse a objetos interactuables, aparece indicador visual
+    - La interaccion abre interfaces (computadora, lectura de documentos, etc.)
+    - Durante interacciones, el tiempo sigue pasando y la creatura puede hacer cosas
+    - La nota de cuidados se puede consultar en cualquier momento, incluso durante otras interacciones
+    - La interfaz de la nota es semi-transparente o se superpone, permitiendo ver parcialmente el juego
+
+PLAN DE DESARROLLO - 6 MESES (OPTIMIZADO):
+
+    OBJETIVO: Completar MVP funcional en 6 meses con equipo pequeño (2-3 personas)
+
+    MVP DE 2 SEMANAS (PROTOTIPO CORE VALIDACION):
+    
+    OBJETIVO: Validar mecanicas core y viabilidad tecnica en 2 semanas
+    
+    SEMANA 1 - PROTOTIPO BASICO:
+    - Dia 1-2: Setup proyecto Unity, arquitectura ECS basica
+    - Dia 3-4: Movimiento horizontal del jugador (izquierda/derecha)
+    - Dia 5: Sistema de parpadeo basico (fade a negro cada 4 segundos)
+    - Dia 6-7: Integracion parpadeo con sistema de tiempo
+    
+    SEMANA 2 - VALIDACION MECANICAS:
+    - Dia 8-9: Sistema de afecto/resentimiento simplificado (valores basicos)
+    - Dia 10-11: Creatura basica con cambio de posicion durante parpadeo
+    - Dia 12-13: 1 escenario simple (Cuarto) con parallax basico
+    - Dia 14: Testing y validacion - ¿Funciona la mecanica de parpadeo?
+    
+    ENTREGABLES MVP 2 SEMANAS:
+    - Prototipo jugable con movimiento horizontal
+    - Sistema de parpadeo funcional (fade a negro cada 4 segundos)
+    - Creatura que cambia de posicion durante parpadeo
+    - Sistema basico de afecto/resentimiento
+    - 1 escenario funcional (Cuarto)
+    
+    CRITERIOS DE EXITO MVP 2 SEMANAS:
+    - Mecanica de parpadeo funciona correctamente
+    - Creatura cambia de posicion durante parpadeo (jugador lo nota)
+    - Sistema de afecto/resentimiento responde a acciones basicas
+    - Performance: 60 FPS en PC
+    - Si estos criterios se cumplen: CONTINUAR desarrollo
+    - Si NO se cumplen: REVISAR y ajustar antes de continuar
+    
+    DECISION POST-MVP 2 SEMANAS:
+    - Si MVP funciona: Proceder con desarrollo completo de 6 meses
+    - Si MVP tiene problemas: Resolver problemas tecnicos antes de continuar
+    - Nota: Este MVP es CRITICO - valida la mecanica mas importante del juego
+
+    OPTIMIZACIONES IMPLEMENTADAS PARA REDUCIR TIEMPO:
+
+    1. ANIMACIONES REDUCIDAS:
+       - De 5+4+5+6 animaciones por nivel a 3 animaciones por nivel
+       - Personaje: 4 animaciones (reducido de 5)
+       - Creatura: 3 animaciones por nivel x 4 niveles = 12 animaciones base
+       - Nivel 4: 3 animaciones por ruta x 3 rutas = 9 animaciones (comparten base)
+       - Total: ~21 animaciones (reducido de ~30+)
+       - Ahorro estimado: 3-4 semanas
+
+    2. SISTEMA DE INVESTIGACION SIMPLIFICADO:
+       - De mockups web complejos a sistema de lectura de texto simple
+       - Contenido: 3-5 entradas de foro + 1-2 documentos (texto simple)
+       - Sin puzzles complejos ni navegacion web real
+       - Ahorro estimado: 2 semanas
+
+    3. SISTEMA DE GUARDADO SIMPLIFICADO:
+       - MVP: Solo checkpoints automaticos
+       - Guardado manual con slots multiples: POST-MVP
+       - Ahorro estimado: 1 semana
+
+    4. DURACION DE JUEGO REDUCIDA:
+       - De 2.5 horas a 2.2 horas (~19 minutos menos)
+       - DIA 6-10: 12 min -> 10 min cada uno
+       - DIA 11-13: 15 min -> 12 min cada uno
+       - Ahorro estimado: 1-2 semanas de contenido
+
+    5. DESARROLLO PARALELO:
+       - Programacion y arte en paralelo desde inicio
+       - Prototipo funcional con placeholders
+       - Arte final se integra progresivamente
+       - Ahorro estimado: 4-6 semanas (por paralelizacion)
+
+    6. USO DE ASSETS Y HERRAMIENTAS:
+       - Asset Store de Unity para sistemas base
+       - Templates 2D modificables (parallax, sprites)
+       - Herramientas de animacion 2D (DragonBones, Spine, Aseprite)
+       - Ahorro estimado: 1-2 semanas
+
+    7. ELIMINACION INTEGRACION 2D/3D:
+       - Todo en 2D (parallax scrolling en lugar de 3D)
+       - Elimina complejidad tecnica de integracion
+       - Mismo efecto visual, desarrollo mas simple
+       - Ahorro estimado: 2-3 semanas
+
+    8. REDUCCION RUTAS EVOLUTIVAS:
+       - 2 rutas en lugar de 3 (Obsesion y Sadismo)
+       - Ruta Balanceada: POST-MVP
+       - Reduce testing y balance en 50%
+       - Ahorro estimado: 1-2 semanas
+
+    9. SIMPLIFICACION FINALES:
+       - Final base comun con variaciones por ruta
+       - En lugar de 3 secuencias completamente diferentes
+       - Ahorro estimado: 1 semana
+
+    CRONOGRAMA DE 6 MESES (POST-MVP 2 SEMANAS):
+
+    MES 1-2: PROTOTIPO CORE (6 semanas - despues de MVP 2 semanas):
+    - Semanas 3-4: Sistema completo de parpadeo, sistema afecto/resentimiento completo,
+      1 escenario completo (Cuarto), creatura con animaciones basicas
+    - Semanas 5-6: Sistema de evolucion (4 niveles), triggers de creatura, 1 ruta (Obsesion)
+    - Semanas 7-8: Arte placeholder 2D, integracion visual completa, testing inicial
+
+    MES 3-4: CONTENIDO Y MECANICAS (8 semanas)
+    - Semanas 9-10: 3 escenarios completos (2D parallax), sistema de investigacion simplificado
+    - Semanas 11-12: 2 rutas evolutivas completas (Obsesion y Sadismo), minijuego basico
+    - Semanas 13-14: Sistema de guardado (solo checkpoints), sistema de linterna
+    - Semanas 15-16: 2 finales implementados (base comun con variaciones), contenido narrativo completo
+
+    MES 5: ARTE Y PULIDO (4 semanas)
+    - Semanas 17-18: Arte 2D final (pixel art o vectorial pastel), integracion visual completa
+    - Semanas 19-20: Animaciones 2D finales (reducidas), audio basico, efectos
+
+    MES 6: TESTING Y LANZAMIENTO (4 semanas)
+    - Semanas 21-22: Testing completo, balance de valores, correccion de bugs
+    - Semanas 23-24: Optimizacion de performance, build final PC y Android,
+      preparacion para lanzamiento en Steam y Google Play
+
+    PRIORIDADES PARA MVP:
+
+    DEBE INCLUIR (CORE):
+    - Sistema de parpadeo funcional y pulido (validado en MVP 2 semanas)
+    - Sistema de afecto/resentimiento simplificado
+    - 2 rutas evolutivas completas (Obsesion y Sadismo)
+    - 3 escenarios (Cuarto, Cocina, Pasillo) - todo en 2D
+    - 2 finales (base comun con variaciones por ruta)
+    - Sistema basico de guardado (checkpoints automaticos)
+    - Mecanica de linterna para el final
+    - Contenido narrativo minimo pero efectivo
+
+    PUEDE SIMPLIFICARSE:
+    - Animaciones reducidas (3 por nivel, 4 cuadros cada una)
+    - Investigacion simplificada (texto simple, sin mockups web)
+    - Guardado solo automatico (sin slots multiples)
+    - Contenido narrativo minimo pero efectivo
+
+    POST-MVP (FUTURAS ACTUALIZACIONES):
+    - Guardado manual con multiples slots
+    - Mas contenido de investigacion (puzzles, mas documentos)
+    - Animaciones adicionales de creatura
+    - Optimizaciones avanzadas de performance
+    - Contenido adicional (mas dias, mas eventos)
+
+    EQUIPO MINIMO RECOMENDADO:
+    - 1 Programador (Unity, ECS, sistemas core)
+    - 1 Artista 2D (pixel art o vectorial, escenarios y personajes, animaciones)
+    - 1 Diseñador de audio (opcional, puede ser externo/part-time)
+    - Nota: Con todo en 2D, no se requiere artista 3D (reduce equipo necesario)
+
+    RIESGOS Y MITIGACION (ACTUALIZADO):
+    - RIESGO: Mecanica de parpadeo dificil de implementar
+      MITIGACION: MVP de 2 semanas valida esta mecanica PRIMERO, si no funciona se ajusta antes de continuar
+    - RIESGO: Balance de rutas evolutivas
+      MITIGACION: Solo 2 rutas en MVP (reduce testing 50%), testing continuo desde semana 5
+    - RIESGO: Arte 2D mas lento de lo esperado
+      MITIGACION: Pixel art o vectorial simple (mas rapido), herramientas de animacion, animaciones reducidas
+    - RIESGO: Integracion 2D/3D compleja
+      MITIGACION: ELIMINADO - todo en 2D (parallax scrolling)
+
+    METRICAS DE EXITO:
+    - MVP de 2 semanas: Mecanica de parpadeo funcional y validada
+    - MVP funcional en 6 meses (despues de MVP 2 semanas)
+    - 2 rutas evolutivas funcionando correctamente (Obsesion y Sadismo)
+    - 2.2 horas de contenido jugable
+    - Performance: 60 FPS en PC, 30-60 FPS en Android
+    - Sin bugs criticos al lanzamiento
+
+Plataform:
+     Plataforma PC

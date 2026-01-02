@@ -1,0 +1,476 @@
+Historia
+
+Eres un empleado de comida rápida en el Eldrick Super Food Market, un restaurante que atiende a una clientela muy particular: dioses lovecraftianos, ángeles, demonios y otras entidades sobrenaturales. Tienes problemas de manejo de ira y debes mantener la calma mientras atiendes a estos clientes exigentes y sus pedidos extraños y perturbadores. Tu objetivo es ahorrar $120,000 para poder tener una vida mejor, pero cada día debes pagar tus gastos: comida, alquiler y otros costos de vida. Si pierdes el control y explotas, serás despedido o renunciarás, perdiendo tu progreso.
+
+Objetivo Principal
+
+Ahorrar $120,000 mientras trabajas como empleado de comida rápida, manejando clientes sobrenaturales y controlando tu ira para no perder el trabajo.
+
+Mecánicas de Juego
+
+Sistema de Turnos y Días (Inspirado en Papers Please):
+
+- Ciclo de Trabajo: Cada día trabajas un turno atendiendo clientes
+- Fin del Turno: Al finalizar cada turno, debes pagar tus gastos diarios:
+  - Alquiler
+  - Comida
+  - Otros gastos básicos
+- Progresión: El dinero restante se suma a tus ahorros
+- Meta: Llegar a $120,000 en ahorros totales
+
+Sistema de Atención al Cliente:
+
+- Tomar Pedidos: Los clientes llegan y solicitan pedidos extraños y perturbadores
+- Procesar Pedidos: Debes tomar nota del pedido y prepararlo (o simular la preparación)
+- Interacción con Clientes: Mientras esperan, los clientes interactúan contigo
+- Tipos de Clientes:
+  - Amables: Clientes que son respetuosos y pacientes
+  - Sarcásticos: Clientes que hacen comentarios mordaces y provocativos
+  - Secos: Clientes directos y fríos, sin mucha interacción
+- Tipos de Entidades:
+  - Dioses lovecraftianos (Cthulhu, Nyarlathotep, etc.)
+  - Ángeles
+  - Demonios
+  - Otras entidades sobrenaturales
+
+Sistema de Manejo de Ira (Valores y Mecánicas Definidos):
+
+- Barra de Ira: Sistema que mide tu nivel de estrés/ira (0-100 puntos)
+- Aumento de Ira (Valores Específicos):
+  - Cliente sarcástico: +15-25 puntos
+  - Cliente seco difícil: +10-15 puntos
+  - Pedido complejo: +5-10 puntos
+  - Error al procesar pedido: +10 puntos
+  - Respuesta agresiva del jugador: +5-10 puntos
+- Reducción de Ira:
+  - Cliente amable: -10-15 puntos
+  - Técnicas de relajación activas (ver abajo)
+  - Pausa entre clientes: -5 puntos (automático)
+- Mecánicas Activas de Reducción de Ira:
+  1. Respiración Profunda:
+     - Botón "Respirar" (cooldown 30 segundos)
+     - Minijuego: Presionar botones en secuencia (↑↓↑↓)
+     - Reduce ira: -20 puntos
+     - Tiempo requerido: 3-5 segundos
+  2. Contar hasta 10:
+     - Botón "Contar" (cooldown 20 segundos)
+     - Click rápido 10 veces en secuencia
+     - Reduce ira: -15 puntos
+  3. Pausa Mental:
+     - Botón "Pausa" (1 vez por cliente)
+     - Pausa el tiempo 5 segundos
+     - Reduce ira: -10 puntos
+- Niveles de Ira y Advertencias Graduales:
+  - 0-50%: Normal (verde) - Sin advertencias
+  - 50-75%: Tensión (amarillo) - "Mantén la calma..."
+  - 75-90%: Advertencia (naranja) - "¡Respira! Estás al límite"
+  - 90-99%: Peligro (rojo) - "¡CUIDADO! Una más y explotas"
+  - 100%: Game Over - Explosión de ira
+- Feedback Visual:
+  - Barra de ira con colores según nivel
+  - Efectos visuales cuando aumenta/disminuye
+  - Indicadores de advertencia claros
+  - Animaciones de técnicas de relajación
+- Consecuencias de Perder el Control:
+  - Si la barra de ira llega a 100%: Explotas
+  - Explotar = Ser despedido o renunciar
+  - Game Over: Pierdes el progreso del día o toda la partida (según modo)
+
+Sistema de Pedidos (Mecánicas Definidas):
+
+- Mecánica Principal: Sistema de Selección con Timing
+  - Cliente pide un pedido extraño y perturbador
+  - Aparece menú con opciones de ingredientes/componentes
+  - Debes seleccionar correctamente los componentes del pedido
+  - Tiempo limitado: 5-10 segundos según complejidad
+  - Feedback inmediato: ✓ Correcto / ✗ Error
+- Tipos de Pedidos:
+  - Simple: 2-3 componentes, tiempo generoso (10s)
+  - Medio: 3-4 componentes, tiempo moderado (7s)
+  - Complejo: 4-5 componentes, tiempo limitado (5s)
+- Estructura de Pedidos:
+  - Base: [Tipo de comida] (Hamburguesa, Refresco, Papas, etc.)
+  - Modificador 1: [Ingrediente extraño] (Almas, Conceptos, Vacío, etc.)
+  - Modificador 2: [Adjetivo] (Infernal, Cósmico, Etéreo, etc.)
+- Ejemplos de Pedidos:
+  - "Un Big Mac con almas de niños"
+  - "Una hamburguesa sin carne, solo conceptos"
+  - "Un refresco que contenga el vacío"
+  - "Papas fritas con conceptos etéreos"
+- Errores y Consecuencias:
+  - Error al procesar: -$10-15 (multa)
+  - Error aumenta ira: +10 puntos
+  - Cliente se queja: Puede aumentar ira adicional
+- Feedback de Éxito/Error:
+  - Visual: Animación de ✓ verde o ✗ rojo
+  - Sonido: Feedback auditivo claro
+  - UI: Indicador de tiempo restante visible
+
+Sistema Económico (Valores Definidos):
+
+- Salario Base por Cliente: $50 por cliente atendido correctamente
+- Propinas: Clientes amables pueden dejar propinas de $10-20
+- Multas: Errores o mal servicio resultan en deducciones de $10-15
+- Gastos Diarios (al final del turno):
+  - Alquiler: $200/día (costo fijo)
+  - Comida: $50-100/día (variable según decisiones del jugador)
+  - Otros gastos: $50/día (costo fijo)
+  - Total diario: ~$300-350/día
+- Progresión Económica:
+  - Meta: $120,000 en ahorros totales
+  - Ahorro promedio por día: $3,000-4,000 (después de gastos)
+  - Duración estimada: 30-40 días de juego
+  - Ahorros: El dinero restante después de gastos se suma a tu meta
+- Balance Económico:
+  - Clientes por día: 5-8 clientes (ajustable según dificultad)
+  - Ingresos diarios: $250-400 (base) + propinas
+  - Gastos diarios: $300-350
+  - Ahorro neto diario: $3,000-4,000 promedio
+
+Sistema de Diálogo y Elección:
+
+- Interacciones con Clientes: Mientras esperan, los clientes hablan contigo
+- Respuestas del Jugador: Puedes elegir cómo responder:
+  - Respuestas profesionales (mantienen la calma): -5 ira, posible propina
+  - Respuestas neutrales: Sin cambio en ira
+  - Respuestas agresivas: +5-10 ira, riesgo de perder propina
+- Efectos en la Ira: Tus respuestas afectan tu nivel de ira
+- Efectos en el Dinero: Algunas interacciones pueden afectar tu pago o propinas
+- Pool de Diálogos: Sistema extenso de diálogos (ver sección específica)
+
+Game Loop
+
+1. Inicio del Día: Comienzas tu turno con dinero del día anterior (o salario inicial)
+2. Atender Clientes: 
+   - Cliente llega
+   - Toma su pedido (extraño/perturbador)
+   - Procesa el pedido
+   - Cliente interactúa contigo (amable/sarcástico/seco)
+   - Eliges cómo responder
+   - Cliente se va (o causa problemas)
+   - Ganas dinero (o pierdes por errores)
+   - Tu ira aumenta/disminuye según la interacción
+3. Fin del Turno: 
+   - Pagas gastos diarios (alquiler, comida, etc.)
+   - El dinero restante se suma a tus ahorros
+   - Si alcanzas $120,000: Victoria
+   - Si explotas de ira: Game Over
+4. Nuevo Día: Repites el ciclo
+
+Temática y Estilo
+
+Inspiración: Papers Please:
+- Estructura de días/turnos similar
+- Sistema de gastos al final del día
+- Presión constante por mantener el trabajo
+- Decisiones morales y prácticas
+
+Estética Lovecraftiana:
+- Clientes sobrenaturales y aterradores
+- Pedidos que desafían la lógica
+- Ambiente de horror cósmico mezclado con comedia absurda
+- Tono oscuro pero con elementos de humor negro
+
+Tensión Emocional:
+- El jugador debe balancear eficiencia con control emocional
+- Cada cliente es una prueba de paciencia
+- La presión económica aumenta la tensión
+
+Elementos de Juego
+
+Clientes (Entidades Sobrenaturales):
+
+Tipos de Entidades:
+- Dioses lovecraftianos: Cthulhu, Nyarlathotep, Azathoth, etc.
+- Ángeles: Serafines, Querubines, Arcángeles
+- Demonios: Varios rangos y tipos
+- Otras entidades: Espectros, entidades del vacío, etc.
+
+Personalidades:
+- Amables: Pacientes, respetuosos, pueden dar propinas
+- Sarcásticos: Comentarios mordaces, provocativos, aumentan la ira
+- Secos: Directos, fríos, mínima interacción
+
+Pedidos:
+- Cada tipo de entidad tiene pedidos temáticos
+- Pedidos extraños y perturbadores
+- Algunos pedidos son más complejos que otros
+- Sistema de generación procedural (ver sección específica)
+
+Jugador:
+
+- Empleado de comida rápida con problemas de ira
+- Debe mantener la calma para conservar el trabajo
+- Objetivo: Ahorrar $120,000
+- Debe pagar gastos diarios para sobrevivir
+
+Sistema de Estadísticas
+
+Estadísticas del Jugador:
+
+- Dinero Actual: Dinero disponible para gastos
+- Ahorros Totales: Acumulado hacia la meta de $120,000
+- Nivel de Ira: Barra que mide el estrés/ira actual
+- Días Trabajados: Contador de días completados
+- Clientes Atendidos: Estadística de eficiencia
+
+Estadísticas de Clientes:
+
+- Tipo de Entidad: Lovecraftiano, Ángel, Demonio, etc.
+- Personalidad: Amable, Sarcástico, Seco
+- Complejidad del Pedido: Simple, Medio, Complejo
+- Propina Potencial: Cantidad que puede dejar
+
+Victoria y Derrota
+
+Condición de Victoria:
+
+- Meta Principal: Alcanzar $120,000 en ahorros totales
+- Al llegar a esta cantidad, el jugador puede "escapar" y tener una vida mejor
+- Final: El jugador logra su objetivo y abandona el trabajo
+
+Condiciones de Derrota:
+
+- Explosión de Ira: Si la barra de ira se llena completamente
+  - El jugador explota y es despedido o renuncia
+  - Game Over: Pierde el progreso (dependiendo del modo de juego)
+- Quiebra: Si no puedes pagar tus gastos diarios
+  - Game Over: No puedes continuar trabajando
+
+Arquitectura Técnica
+
+Arquitectura ECS (Entity Component System):
+
+El juego utilizará la arquitectura ECS existente en el proyecto, adaptándola para este nuevo concepto de juego.
+
+Componentes Principales:
+
+Componentes de Cliente:
+- CustomerTypeComponent: Tipo de entidad (Lovecraftiano, Ángel, Demonio)
+- PersonalityComponent: Personalidad (Amable, Sarcástico, Seco)
+- OrderComponent: Pedido del cliente (descripción, complejidad)
+- DialogueComponent: Diálogos e interacciones del cliente
+
+Componentes de Jugador:
+- AngerComponent: Nivel de ira actual y máximo
+- MoneyComponent: Dinero actual y ahorros totales
+- PlayerStateComponent: Estado del jugador (trabajando, en pausa, etc.)
+
+Componentes de Sistema:
+- DayComponent: Información del día actual
+- ExpenseComponent: Gastos diarios
+- TimeComponent: Tiempo del turno
+
+Sistemas Principales:
+
+- CustomerSystem: Gestiona la llegada y comportamiento de clientes
+- OrderSystem: Procesa pedidos y verifica corrección
+- AngerSystem: Gestiona el sistema de ira (aumento/reducción)
+- EconomySystem: Gestiona dinero, salarios, propinas y gastos
+- DialogueSystem: Gestiona interacciones y diálogos con clientes
+- DaySystem: Gestiona el ciclo de días y fin de turno
+- SaveSystem: Guarda el progreso del jugador
+
+Managers Existentes a Utilizar:
+
+- DialogueManager: Para gestionar diálogos con clientes
+- TimeManager: Adaptado para gestionar turnos y días
+- FlagManager: Para flags de progreso y decisiones
+- UIManager: Para mostrar UI de ira, dinero, clientes
+- SaveManager: Para guardar progreso
+- GameManager: Para estados del juego
+
+Escalabilidad:
+
+- La arquitectura ECS permite añadir fácilmente nuevos tipos de clientes
+- Nuevos tipos de personalidades se pueden añadir como componentes
+- Nuevos pedidos se pueden crear sin modificar código base
+- El sistema de diálogos es modular y extensible
+
+Sistema de Generación Procedural de Pedidos:
+
+- Estructura Modular:
+  - Base de comida: Pool de 10-15 tipos (Hamburguesa, Refresco, Papas, etc.)
+  - Ingredientes extraños: Pool de 20-30 ingredientes (Almas, Conceptos, Vacío, etc.)
+  - Adjetivos: Pool de 15-20 adjetivos (Infernal, Cósmico, Etéreo, etc.)
+- Generación:
+  - Combinación aleatoria: Base + Ingrediente + Adjetivo
+  - Temática por tipo de entidad: Cada entidad tiene preferencias
+  - Complejidad variable: Simple (2 componentes) a Complejo (4-5 componentes)
+- Variedad:
+  - 100+ combinaciones posibles
+  - Pedidos únicos por tipo de entidad
+  - Evita repetición excesiva con sistema de tracking
+- Ejemplos Generados:
+  - "Hamburguesa con almas de niños infernales"
+  - "Refresco que contenga el vacío cósmico"
+  - "Papas fritas con conceptos etéreos"
+
+Pool de Diálogos:
+
+- Estructura:
+  - 50+ líneas por personalidad (Amable, Sarcástico, Seco)
+  - 20+ líneas por tipo de entidad (Lovecraftiano, Ángel, Demonio)
+  - Combinaciones: Personalidad × Tipo = Alta variedad
+- Diálogos Reactivos:
+  - Diálogos que cambian según tu nivel de ira
+  - Diálogos que reaccionan a tus respuestas previas
+  - Diálogos contextuales según el día/progreso
+- Variedad Total:
+  - 150+ líneas de diálogo base
+  - 300+ combinaciones posibles
+  - Sistema de rotación para evitar repetición
+- Temas de Diálogos:
+  - Comentarios sobre el pedido
+  - Preguntas sobre tu trabajo
+  - Observaciones sobre tu estado emocional
+  - Comentarios filosóficos/absurdos según entidad
+
+Eventos Especiales:
+
+- Frecuencia: 1-2 eventos especiales por semana (cada 7 días)
+- Tipos de Eventos:
+  1. Día de Descuento:
+     - Clientes más amables (+20% probabilidad)
+     - Propinas aumentadas (+50%)
+     - Duración: 1 día
+  2. Rush Hour:
+     - Más clientes (8-10 en lugar de 5-8)
+     - Mayor presión, pero más ingresos
+     - Duración: 1 día
+  3. Cliente VIP:
+     - Pedido muy complejo
+     - Gran propina si lo atiendes bien ($50-100)
+     - Aumenta ira si fallas (+20)
+  4. Día de Mala Suerte:
+     - Errores más costosos (-$20 en lugar de -$10)
+     - Clientes más difíciles
+     - Duración: 1 día
+  5. Inspector:
+     - Debes ser perfecto o multa grande (-$50)
+     - Sin errores permitidos
+     - Bonificación si pasas la inspección (+$100)
+  6. Día de Descanso:
+     - Menos clientes (3-4)
+     - Oportunidad de reducir ira significativamente
+     - Ingresos reducidos pero menos estrés
+- Sistema de Eventos:
+  - Aleatorios pero balanceados
+  - No más de 1 evento negativo seguido
+  - Eventos positivos compensan negativos
+  - Tracking de eventos para evitar repetición excesiva
+
+Plan de Desarrollo
+
+Fase 0: Prototipo Rápido (2-3 semanas) - PRIORIDAD MÁXIMA
+
+Objetivo: Validar el core loop y la diversión antes de expandir contenido
+
+Sistemas Core Mínimos:
+- Sistema de turnos/días básico (1 día completo)
+- Sistema de atención a clientes (3-5 clientes por día)
+- Sistema de ira con valores reales (0-100, valores específicos)
+- Sistema económico básico (números definidos: $50/cliente, $300-350 gastos)
+- Sistema de pedidos simple (selección con timing)
+- Sistema de diálogo básico (2-3 opciones por cliente)
+- UI básica (ira, dinero, cliente actual, feedback visual)
+
+Contenido Mínimo:
+- 3-5 tipos de clientes diferentes
+- 2-3 personalidades (Amable, Sarcástico, Seco)
+- 10-15 pedidos básicos (sin generación procedural aún)
+- Gastos diarios fijos ($300-350)
+- Meta reducida para testing: $10,000-20,000 (equivalente a 3-5 días)
+
+Testing y Validación:
+- Testear con 3-5 jugadores
+- Validar: ¿Es divertido el loop básico?
+- Validar: ¿El sistema de ira es balanceado?
+- Validar: ¿Los números económicos funcionan?
+- Iterar basándose en feedback
+
+Fase 0.5: MVP Básico (1-2 semanas después del prototipo)
+
+Sistemas Core:
+- Sistema de turnos/días completo
+- Sistema de atención a clientes (5-8 clientes por día)
+- Sistema de ira completo con mecánicas activas
+- Sistema económico completo (valores balanceados)
+- Sistema de pedidos con generación procedural básica
+- Sistema de diálogo con pool amplio
+- UI completa (ira, dinero, cliente, feedback claro)
+
+Contenido:
+- 5-8 tipos de clientes diferentes
+- 3 personalidades (Amable, Sarcástico, Seco)
+- Sistema de generación procedural de pedidos (50+ combinaciones)
+- Pool de diálogos (100+ líneas)
+- Gastos diarios balanceados
+- Meta de $120,000 (30-40 días de juego)
+
+Finales:
+- Victoria: Alcanzar $120,000
+- Derrota: Explosión de ira o quiebra
+
+Fase 1: Expansión de Contenido (3-4 semanas)
+
+- Más tipos de clientes (10-15 tipos)
+- Más personalidades y variaciones
+- Pedidos más complejos y variados (100+ combinaciones)
+- Sistema de propinas mejorado
+- Gastos variables y eventos aleatorios
+- Pool de diálogos expandido (300+ líneas)
+- Sistema de eventos especiales implementado (6 tipos)
+- Generación procedural completa de pedidos
+
+Fase 2: Pulido y Balance (2-3 semanas)
+
+- Balance de economía (ajustar valores según testing)
+- Balance de sistema de ira (ajustar valores según feedback)
+- Mejoras de UI/UX (feedback visual mejorado)
+- Efectos visuales y de audio
+- Tutorial mejorado
+- Optimización de rendimiento
+- Testing extensivo con jugadores
+
+Fase 3: Contenido Completo (4-6 semanas)
+
+- Todos los tipos de clientes planeados (15-20 tipos)
+- Sistema completo de diálogos con ramificaciones
+- Todos los eventos especiales implementados
+- Logros y estadísticas
+- Múltiples finales según decisiones
+- Contenido adicional y easter eggs
+- Localización (si aplica)
+
+Notas de Diseño
+
+- Tono: Horror cósmico mezclado con comedia absurda
+- Dificultad: Balance entre desafío y accesibilidad
+- Rejugabilidad: Diferentes clientes y eventos en cada partida (generación procedural)
+- Progresión: Sensación de avance hacia la meta de $120,000 (30-40 días)
+- Tensión: Presión constante por mantener el trabajo y controlar la ira
+- Validación Temprana: Prototipo rápido es crítico para validar diversión
+- Iteración: Ajustar valores según feedback de testing continuo
+
+Prioridades de Desarrollo:
+
+1. PROTOTIPO RÁPIDO (Crítico):
+   - Validar core loop antes de expandir
+   - Testear con jugadores reales
+   - Iterar basándose en feedback
+
+2. NÚMEROS DEFINIDOS (Alto):
+   - Valores económicos específicos
+   - Valores de ira específicos
+   - Curva de dificultad clara
+
+3. MECÁNICAS ACTIVAS (Alto):
+   - Sistema de reducción de ira con minijuegos
+   - Feedback visual claro
+   - Advertencias graduales
+
+4. CONTENIDO PROCEDURAL (Medio):
+   - Generación de pedidos
+   - Pool amplio de diálogos
+   - Eventos especiales

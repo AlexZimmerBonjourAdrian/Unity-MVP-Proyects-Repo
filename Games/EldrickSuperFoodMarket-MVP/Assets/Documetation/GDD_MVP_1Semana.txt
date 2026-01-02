@@ -1,0 +1,233 @@
+GDD - MVP 1 Semana
+Eldrick Super Food Market
+
+OBJETIVO DEL MVP
+Validar el core loop básico del juego en una semana. El MVP debe ser jugable y demostrar que el concepto es divertido antes de expandir contenido.
+
+ALCANCE REDUCIDO
+- 1 día de trabajo completo (no múltiples días)
+- 3-5 clientes por sesión
+- Meta reducida: $5,000 (equivalente a completar 1 día exitosamente)
+- Sin sistema de días múltiples (solo 1 turno)
+- Sin eventos especiales
+- Sin generación procedural (pedidos predefinidos)
+
+HISTORIA (Simplificada)
+Eres un empleado de comida rápida en el Eldick Super Food Market. Debes atender a 3-5 clientes sobrenaturales en tu primer día de trabajo, mantener la calma y ganar suficiente dinero para pagar tus gastos y ahorrar $5,000.
+
+MECÁNICAS CORE (Mínimas Viables)
+
+1. Sistema de Clientes:
+   - 3-5 clientes aparecen secuencialmente
+   - Cada cliente tiene: Tipo (Lovecraftiano/Ángel/Demonio) + Personalidad (Amable/Sarcástico/Seco)
+   - Cliente pide un pedido extraño
+   - Cliente interactúa contigo mientras espera
+   - Cliente se va después de ser atendido
+
+2. Sistema de Pedidos (Ultra-Simplificado):
+   - Cliente dice su pedido (texto predefinido)
+   - Aparece menú con 4-6 opciones
+   - Jugador selecciona los componentes correctos
+   - Sin tiempo limitado (para MVP)
+   - Feedback: ✓ Correcto / ✗ Error
+   - 10-15 pedidos predefinidos totales
+
+3. Sistema de Ira (Básico):
+   - Barra de ira: 0-100 puntos
+   - Aumenta:
+     * Cliente sarcástico: +20 puntos
+     * Error en pedido: +15 puntos
+     * Respuesta agresiva: +10 puntos
+   - Disminuye:
+     * Cliente amable: -15 puntos
+     * Respuesta profesional: -5 puntos
+   - Sin mecánicas activas de reducción (para MVP)
+   - Advertencias:
+     * 50%: "Mantén la calma..."
+     * 75%: "¡Respira! Estás al límite"
+     * 90%: "¡CUIDADO! Una más y explotas"
+     * 100%: Game Over
+   - Feedback visual: Barra de colores (verde/amarillo/naranja/rojo)
+
+4. Sistema Económico (Simplificado):
+   - Salario: $50 por cliente atendido correctamente
+   - Propina: $10-15 (solo clientes amables, 50% probabilidad)
+   - Multa: -$10 por error
+   - Gastos al final del turno:
+     * Alquiler: $200
+     * Comida: $75
+     * Otros: $50
+     * Total: $325
+   - Ahorros: Dinero restante después de gastos
+   - Meta: $5,000 en ahorros
+
+5. Sistema de Diálogo (Básico):
+   - Cliente dice 1 línea de diálogo
+   - Jugador elige entre 2 opciones:
+     * Opción profesional (reduce ira, posible propina)
+     * Opción agresiva (aumenta ira, sin propina)
+   - 15-20 líneas de diálogo totales (muy básico)
+
+UI MÍNIMA
+- Barra de ira visible (con colores)
+- Dinero actual visible
+- Ahorros totales visible
+- Cliente actual visible (nombre/tipo)
+- Pedido del cliente visible
+- Menú de selección de pedido
+- Opciones de diálogo (2 botones)
+- Feedback visual de éxito/error
+- Pantalla de fin de turno (gastos y ahorros)
+- Pantalla de Game Over (si explotas de ira)
+- Pantalla de Victoria (si alcanzas $5,000)
+
+CONTENIDO MÍNIMO
+
+Clientes:
+- 3 tipos de entidades:
+  1. Lovecraftiano (Cthulhu)
+  2. Ángel (Serafín)
+  3. Demonio (Menor)
+- 3 personalidades:
+  1. Amable
+  2. Sarcástico
+  3. Seco
+- Total: 3-5 clientes únicos (combinaciones de tipo + personalidad)
+
+Pedidos:
+- 10-15 pedidos predefinidos
+- Ejemplos:
+  * "Hamburguesa con almas de niños"
+  * "Refresco que contenga el vacío"
+  * "Papas fritas con conceptos etéreos"
+  * "Big Mac infernal"
+  * "Refresco cósmico"
+
+Diálogos:
+- 15-20 líneas de diálogo totales
+- 2 opciones de respuesta por diálogo
+- Muy básico, sin ramificaciones complejas
+
+ESTADOS DEL JUEGO
+
+1. Menú Principal:
+   - Botón "Empezar Día"
+   - Botón "Salir"
+
+2. Día de Trabajo:
+   - Aparece cliente 1
+   - Cliente pide pedido
+   - Jugador selecciona componentes
+   - Cliente interactúa
+   - Jugador elige respuesta
+   - Cliente se va
+   - Repetir con cliente 2, 3, 4, 5
+   - Fin del turno
+
+3. Fin del Turno:
+   - Mostrar ingresos del día
+   - Mostrar gastos ($325)
+   - Calcular ahorros
+   - Si ahorros >= $5,000: Victoria
+   - Si no: Mostrar ahorros y opción de reintentar
+
+4. Game Over:
+   - Si ira llega a 100%
+   - Mostrar mensaje: "Explotaste de ira y fuiste despedido"
+   - Opción de reintentar
+
+5. Victoria:
+   - Si ahorros >= $5,000
+   - Mostrar mensaje: "¡Lograste tu meta del primer día!"
+   - Opción de jugar de nuevo
+
+ARQUITECTURA TÉCNICA (Simplificada)
+
+Componentes ECS Mínimos:
+- CustomerComponent: Tipo + Personalidad + Pedido
+- AngerComponent: Nivel actual (0-100)
+- MoneyComponent: Dinero actual + Ahorros
+- OrderComponent: Pedido actual + Componentes
+
+Sistemas Mínimos:
+- CustomerSystem: Gestiona clientes
+- OrderSystem: Procesa pedidos
+- AngerSystem: Gestiona ira
+- EconomySystem: Gestiona dinero
+- DialogueSystem: Gestiona diálogos básicos
+
+Managers:
+- GameManager: Estados del juego
+- UIManager: UI básica
+- (Sin SaveManager para MVP)
+
+PLAN DE DESARROLLO (1 Semana)
+
+Día 1-2: Setup y Core Systems
+- Setup proyecto Unity
+- Implementar GameManager básico
+- Implementar CustomerSystem
+- Implementar OrderSystem básico
+- UI básica (barra de ira, dinero)
+
+Día 3-4: Mecánicas Core
+- Implementar AngerSystem
+- Implementar EconomySystem
+- Implementar DialogueSystem básico
+- Sistema de selección de pedidos
+- Feedback visual básico
+
+Día 5-6: Contenido y UI
+- Crear 3-5 clientes
+- Crear 10-15 pedidos predefinidos
+- Crear 15-20 líneas de diálogo
+- UI completa (todas las pantallas)
+- Integración de sistemas
+
+Día 7: Testing y Pulido
+- Testing interno
+- Ajustar valores de balance
+- Fix bugs críticos
+- Preparar build jugable
+
+CRITERIOS DE ÉXITO DEL MVP
+
+El MVP es exitoso si:
+1. El juego es jugable de principio a fin
+2. El core loop funciona (cliente → pedido → diálogo → siguiente cliente)
+3. El sistema de ira es funcional y balanceado
+4. El sistema económico funciona correctamente
+5. Se puede alcanzar la victoria ($5,000)
+6. Se puede perder (explosión de ira)
+7. El juego es divertido para testear
+
+FEATURES POST-MVP (No incluidos)
+
+- Múltiples días
+- Mecánicas activas de reducción de ira
+- Generación procedural de pedidos
+- Eventos especiales
+- Sistema de guardado
+- Pool amplio de diálogos
+- Múltiples finales
+- Logros
+- Efectos visuales avanzados
+- Sonido/música (opcional para MVP)
+
+NOTAS DE DISEÑO
+
+- Prioridad: Funcionalidad sobre pulido visual
+- Balance: Ajustar valores durante testing
+- Contenido: Mínimo pero suficiente para validar concepto
+- Iteración: Si el MVP funciona, expandir en siguiente fase
+- Testing: Testear con 2-3 personas al final de la semana
+
+VALORES AJUSTABLES PARA TESTING
+
+- Salario por cliente: $50 (ajustable)
+- Gastos diarios: $325 (ajustable)
+- Meta: $5,000 (ajustable)
+- Aumento de ira: +10 a +20 (ajustable)
+- Reducción de ira: -5 a -15 (ajustable)
+- Número de clientes: 3-5 (ajustable)
+

@@ -1,9 +1,6 @@
 using UnityEngine;
-using HorrorEngine.Interfaces;
-using HorrorEngine.Manager;
-using HorrorEngine.Sounds;
-using RetroFPS.Music;
-namespace HorrorEngine.Logic
+using RetroFPS;
+namespace HorrorEngine
 {
     public class CPhoneInteract : MonoBehaviour, Iinteract
     {

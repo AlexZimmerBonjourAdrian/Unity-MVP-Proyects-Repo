@@ -1,15 +1,14 @@
 // C:\Github\UnityMVPs\TerrorGameController-MVP\Assets\1.FirstPersonTerrorGameEngine\Scripts\Items\LockedDoor.cs
 using UnityEngine;
 using System.Collections; // Required for Coroutines (IEnumerator)
-using HorrorEngine.Interfaces;
-using HorrorEngine.Events;
-using HorrorEngine.Manager;
-using HorrorEngine.LevelManager; // Assuming you have a CLevelManager class for scene management
 
-// Asegúrate de que tienes definida la interfaz Iinteract en algún lugar
-// public interface Iinteract { void Oninteract(); }
+namespace HorrorEngine
+{
+    // Assuming you have a CLevelManager class for scene management
+    // Asegúrate de que tienes definida la interfaz Iinteract en algún lugar
+    // public interface Iinteract { void Oninteract(); }
 
-public class LockedDoor : MonoBehaviour, Iinteract
+    public class LockedDoor : MonoBehaviour, Iinteract
 {
     [Header("Door Settings")]
     [SerializeField] private bool IsFinishLevel = false; // Flag indicating if the door is unlocked and leads to level finish
@@ -134,6 +133,5 @@ public class LockedDoor : MonoBehaviour, Iinteract
              Debug.Log("HandleUnlockDoor called, but door was already unlocked.");
         }
     }
+    }
 }
-
-

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace HorrorEngine.Player
+namespace HorrorEngine
 {
     public class Player : MonoBehaviour
     {

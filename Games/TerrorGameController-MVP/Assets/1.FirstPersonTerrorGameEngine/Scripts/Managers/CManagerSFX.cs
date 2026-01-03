@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using HorrorEngine.Events;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace HorrorEngine.Manager
+namespace HorrorEngine
 {
 
 public class CManagerSFX : MonoBehaviour

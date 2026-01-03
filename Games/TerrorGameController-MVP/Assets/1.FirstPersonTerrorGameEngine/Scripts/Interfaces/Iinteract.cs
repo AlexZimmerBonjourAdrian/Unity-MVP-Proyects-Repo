@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HorrorEngine.Interfaces
+namespace HorrorEngine
 {
     public interface Iinteract 
     {

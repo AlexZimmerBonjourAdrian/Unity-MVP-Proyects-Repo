@@ -1,7 +1,8 @@
-using HorrorEngine.Interfaces;
 using UnityEngine;
 
-public class BaseItem : MonoBehaviour, IItem, Iinteract
+namespace HorrorEngine
+{
+    public class BaseItem : MonoBehaviour, IItem, Iinteract
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -22,5 +23,6 @@ public class BaseItem : MonoBehaviour, IItem, Iinteract
         {
             Debug.Log($"Item {Name} is not usable.");
         }
+    }
     }
 }

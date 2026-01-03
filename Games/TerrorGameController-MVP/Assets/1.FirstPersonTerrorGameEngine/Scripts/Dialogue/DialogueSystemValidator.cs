@@ -2,7 +2,7 @@ using UnityEngine;
 using Yarn.Unity;
 using Yarn.Unity.Legacy;
 
-namespace HorrorEngine.Dialogue
+namespace HorrorEngine
 {
     public class DialogueSystemValidator : MonoBehaviour
     {

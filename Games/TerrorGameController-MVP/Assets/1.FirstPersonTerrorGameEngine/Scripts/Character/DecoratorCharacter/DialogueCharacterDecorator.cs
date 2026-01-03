@@ -1,8 +1,9 @@
-using HorrorEngine.Dialogue;
 using UnityEngine;
 using Yarn;
 
-public class DialogueCharacterDecorator : CharacterDecorator
+namespace HorrorEngine
+{
+    public class DialogueCharacterDecorator : CharacterDecorator
 {
     // Aquí puedes añadir propiedades específicas para el decorador de diálogo
     
@@ -61,5 +62,5 @@ public class DialogueCharacterDecorator : CharacterDecorator
          StartDialogue();
          _interact?.Oninteract();
     }
+    }
 }
-

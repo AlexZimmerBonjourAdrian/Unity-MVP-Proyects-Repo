@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace HorrorEngine.LevelManager
+namespace HorrorEngine
 {
     public class CLevelManager : MonoBehaviour
     {

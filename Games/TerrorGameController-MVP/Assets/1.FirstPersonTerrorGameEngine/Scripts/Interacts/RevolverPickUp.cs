@@ -1,9 +1,8 @@
 using UnityEngine;
-using HorrorEngine.Interfaces;
-using HorrorEngine.Manager;
-using HorrorEngine.Events;
 
-public class RevolverPickup : MonoBehaviour, Iinteract
+namespace HorrorEngine
+{
+    public class RevolverPickup : MonoBehaviour, Iinteract
 {
     public void Oninteract()
     {
@@ -14,8 +13,5 @@ public class RevolverPickup : MonoBehaviour, Iinteract
         // Opcional: Destruir el objeto, añadir al inventario, etc.
         Destroy(gameObject);
     }
-
-
-
-    
+    }
 }

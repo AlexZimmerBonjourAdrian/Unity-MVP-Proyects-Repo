@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace HorrorEngine.Events
+namespace HorrorEngine
 {
     public class ColorChangeEventExample : MonoBehaviour
     {

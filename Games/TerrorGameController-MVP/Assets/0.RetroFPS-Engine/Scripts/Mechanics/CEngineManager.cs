@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RetroFPS.Debugging
+namespace RetroFPS
 {
 public class CEngineManager : MonoBehaviour
 {
@@ -39,12 +39,7 @@ public class CEngineManager : MonoBehaviour
     void Update()
    
     {
-        
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            CMICILSPSystem.Instance.IncreaseStat(CMICILSPSystem.Stats.Sanity, 1);
-            Debug.LogWarning(CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Sanity));
-        }
+        // Sistema de Rol eliminado
     }
 }
 }

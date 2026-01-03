@@ -1,7 +1,9 @@
 using UnityEngine;
-using HorrorEngine.Interfaces;
-using HorrorEngine.Events; // Asegúrate de que esta línea esté presente para acceder a los eventos
-public class LightSwitch : MonoBehaviour, Iinteract
+
+namespace HorrorEngine
+{
+    // Asegúrate de que esta línea esté presente para acceder a los eventos
+    public class LightSwitch : MonoBehaviour, Iinteract
 {
      public bool useCounterEvent = false; // Para elegir qué evento usar
 
@@ -15,5 +17,6 @@ public class LightSwitch : MonoBehaviour, Iinteract
          }
          // Aquí podrías añadir lógica visual para el interruptor
      }
+    }
 }
 

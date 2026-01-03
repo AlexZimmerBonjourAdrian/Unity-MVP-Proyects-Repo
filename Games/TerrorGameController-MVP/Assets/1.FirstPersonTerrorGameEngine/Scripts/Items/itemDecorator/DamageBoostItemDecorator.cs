@@ -1,7 +1,9 @@
 using UnityEngine;
 
-// Decorador concreto: Añade un efecto de aumento de daño
-public class DamageBoostItemDecorator : ItemDecorator
+namespace HorrorEngine
+{
+    // Decorador concreto: Añade un efecto de aumento de daño
+    public class DamageBoostItemDecorator : ItemDecorator
 {
     public float DamageMultiplier = 1.5f;
 
@@ -10,5 +12,6 @@ public class DamageBoostItemDecorator : ItemDecorator
         base.Use();
         Debug.Log($"Boosting damage by {DamageMultiplier}x.");
         // Aquí podrías añadir lógica para aumentar el daño del jugador
+    }
     }
 }

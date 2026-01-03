@@ -1,7 +1,9 @@
 using UnityEngine;
 
-// Decorador abstracto para los ítems
-public abstract class ItemDecorator : MonoBehaviour, IItem
+namespace HorrorEngine
+{
+    // Decorador abstracto para los ítems
+    public abstract class ItemDecorator : MonoBehaviour, IItem
 {
     protected IItem _item;
 
@@ -31,5 +33,6 @@ public class DamageBoostDecorator : ItemDecorator
     {
         Debug.Log($"Applying damage boost with multiplier: {_damageMultiplier}");
         // Lógica para aplicar el aumento de daño
+    }
     }
 }

@@ -1,15 +1,17 @@
 using UnityEngine;
-using HorrorEngine.Interfaces;
 
-public class BaseCharacter : MonoBehaviour, ICharacter, Iinteract
+namespace HorrorEngine
 {
-    public virtual void Inicilizate()
+    public class BaseCharacter : MonoBehaviour, ICharacter, Iinteract
     {
-        throw new System.NotImplementedException();
-    }
+        public virtual void Inicilizate()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public  virtual void Oninteract()
-    {
-        throw new System.NotImplementedException();
+        public  virtual void Oninteract()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

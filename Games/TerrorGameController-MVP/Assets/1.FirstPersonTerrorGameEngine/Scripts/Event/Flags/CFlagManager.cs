@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine; // For PlayerPrefs and JsonUtility
 using System.Linq;
 
-namespace HorrorEngine.Events
+namespace HorrorEngine
 {
     [Serializable]
     public class FlagData

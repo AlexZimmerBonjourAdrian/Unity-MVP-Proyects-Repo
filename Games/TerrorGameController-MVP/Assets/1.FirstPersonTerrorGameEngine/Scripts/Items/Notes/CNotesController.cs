@@ -25,19 +25,34 @@ public class CNotesController : MonoBehaviour
 
     private void TryReadNote()
     {
-        if (Vector3.Distance(transform.position, CGameManager.Inst.PlayerPosition) <= interactionDistance)
+        Vector3 playerPosition = GetPlayerPosition();
+        if (playerPosition != Vector3.zero && Vector3.Distance(transform.position, playerPosition) <= interactionDistance)
         {
             isReading = true;
-            CGameManager.Inst.SetGameState(GameState.ReadingNote);
             noteUI.SetActive(true);
             StartCoroutine(TypewriterEffect(noteText));
         }
     }
 
+    private Vector3 GetPlayerPosition()
+    {
+        if (Player.Instance != null)
+        {
+            return Player.Instance.transform.position;
+        }
+        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            return player.transform.position;
+        }
+        
+        return Vector3.zero;
+    }
+
     private void CloseNote()
     {
         isReading = false;
-        CGameManager.Inst.SetGameState(GameState.Playing);
         noteUI.SetActive(false);
     }
 

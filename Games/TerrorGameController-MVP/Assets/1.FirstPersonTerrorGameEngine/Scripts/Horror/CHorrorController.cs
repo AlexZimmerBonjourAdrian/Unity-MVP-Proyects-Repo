@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HorrorEngine.Player;
-[RequireComponent(typeof(CInteractRayCast))]
-[RequireComponent (typeof(Player))]
-public class CHorrorController : MonoBehaviour
+namespace HorrorEngine
+{
+    [RequireComponent(typeof(CInteractRayCast))]
+    [RequireComponent(typeof(Player))]
+    public class CHorrorController : MonoBehaviour
 {
     // Movement variables
     public float moveSpeed = 5f;
@@ -128,6 +129,5 @@ public class CHorrorController : MonoBehaviour
     {
         return direction_Transform;
     }
+    }
 }
-
-

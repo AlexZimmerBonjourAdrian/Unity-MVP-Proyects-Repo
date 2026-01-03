@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RetroFPS.SFX
+namespace RetroFPS
 {
 public class CSFX : MonoBehaviour
 {

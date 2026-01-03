@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RetroFPS.Damage;
-namespace FPSEngine.Enemy
+namespace RetroFPS
 {
 public class CPlayHolderEnemy : MonoBehaviour, IDamage
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace RetroFPS.Music
+namespace RetroFPS
 {
     public class CManagerMusic : MonoBehaviour
     {

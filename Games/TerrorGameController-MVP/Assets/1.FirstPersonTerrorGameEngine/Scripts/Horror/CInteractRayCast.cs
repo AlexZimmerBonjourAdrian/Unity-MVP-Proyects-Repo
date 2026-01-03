@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
-using HorrorEngine.Interfaces;
 
-[ExecuteAlways]
-[RequireComponent(typeof(CHorrorController))]
-public class CInteractRayCast : MonoBehaviour
+namespace HorrorEngine
+{
+    [ExecuteAlways]
+    [RequireComponent(typeof(CHorrorController))]
+    public class CInteractRayCast : MonoBehaviour
 {
     private CHorrorController _controller;
     [SerializeField] private Camera mainCamera;
@@ -111,7 +112,5 @@ public class CInteractRayCast : MonoBehaviour
         // Llama a la función gizmos para dibujar el rayo
         gizmos();
     }
+    }
 }
-
-
-

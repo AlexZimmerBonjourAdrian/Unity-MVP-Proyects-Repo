@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public abstract class CEnemy : MonoBehaviour
+namespace HorrorEngine
+{
+    public abstract class CEnemy : MonoBehaviour
 {
     protected float currentHealth = 100;
     protected float lastAttackTime;
@@ -11,4 +13,5 @@ public abstract class CEnemy : MonoBehaviour
     public  abstract void DiscountLife(float damage);
     public abstract void Die();
    
+    }
 }

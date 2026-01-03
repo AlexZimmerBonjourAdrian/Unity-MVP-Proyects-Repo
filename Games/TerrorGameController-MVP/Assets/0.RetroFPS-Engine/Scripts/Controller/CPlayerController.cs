@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 //Pattern State
-namespace RetroFPS.Control
+namespace RetroFPS
 {
 
 

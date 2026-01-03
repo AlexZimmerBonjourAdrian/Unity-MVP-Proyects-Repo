@@ -27,7 +27,25 @@ Este proyecto implementa un sistema completo de gestión de enemigos y assets pa
 - Sistema de audio (CManagerSFX)
 - Sistema de input (InputManager)
 
+#### [Plan de Migración a ECS](./ECS_Migration_Plan.md)
+- Plan de migración futura a ECS (si es necesario)
+- Comparación de arquitecturas
+- Guía de implementación paso a paso
+- Consideraciones de rendimiento y networking
+
 ## Arquitectura del Proyecto
+
+### ⚠️ Nota Importante sobre Arquitectura
+
+**Este proyecto NO utiliza arquitectura ECS (Entity Component System)**. 
+
+La arquitectura implementada es **modular basada en MonoBehaviour** con los siguientes patrones de diseño:
+- **Singleton Pattern** - Para managers globales
+- **Factory Pattern** - Para creación y pooling de objetos
+- **Observer Pattern** - Para sistema de eventos
+- **Component Pattern** - Para composición de funcionalidades (MonoBehaviour, no ECS)
+
+Esta arquitectura es adecuada para la mayoría de casos de uso y permite fácil integración con networking. Si en el futuro se requiere migrar a ECS por necesidades de rendimiento, consultar el [Plan de Migración a ECS](./ECS_Migration_Plan.md).
 
 ### Diagrama de Sistema
 ```

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RetroFPS.SFX;
 
-namespace RetroFPS.Music
+namespace RetroFPS
 {
 
 
@@ -124,7 +123,7 @@ public class CGameManager : MonoBehaviour
     {
       
         PlayerGameobject = GameObject.FindGameObjectWithTag("Player");
-         CMICILSPSystem.Instance.ApplyTemplate(CMICILSPSystem.Instance.Detective); 
+        // Sistema de Rol eliminado
         originalCameraPosition = Camera.main.transform.position;
         //   states = new Dictionary<GameState, CGameState>()
         // {

@@ -1,8 +1,7 @@
 using UnityEngine;
 using Yarn.Unity;
-using HorrorEngine.Events;
 
-namespace HorrorEngine.Interacts
+namespace HorrorEngine
 {
     public class YarnGameplayCommands : MonoBehaviour
     {

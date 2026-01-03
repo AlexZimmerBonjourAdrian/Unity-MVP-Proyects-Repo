@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class CEnemyController : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CEnemyController : MonoBehaviour
 {
     // Array para almacenar las referencias a todos los CBodyPart encontrados en los hijos
     private CBodyPart[] bodyParts;
@@ -37,6 +39,7 @@ public class CEnemyController : MonoBehaviour
     public CBodyPart[] GetBodyParts()
     {
         return bodyParts;
+    }
     }
 }
 

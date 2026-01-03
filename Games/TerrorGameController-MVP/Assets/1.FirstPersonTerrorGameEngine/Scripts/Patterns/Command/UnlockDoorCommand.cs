@@ -4,17 +4,14 @@ namespace HorrorEngine
 {
     public class UnlockDoorCommand : ICommand
     {
-        private readonly CGameManager gameManager;
-
-        public UnlockDoorCommand(CGameManager gameManager)
+        public UnlockDoorCommand()
         {
-            this.gameManager = gameManager;
         }
 
         public void Execute()
         {
             Debug.Log("UnlockDoorCommand: Executing unlock door logic.");
-            gameManager.StopBackgroundMusic();
+            // CGameManager eliminado - funcionalidad removida
         }
     }
 }

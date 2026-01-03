@@ -4,7 +4,7 @@ using Yarn.Unity.Legacy;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace HorrorEngine.Dialogue
+namespace HorrorEngine
 {
     public class DialogueController : MonoBehaviour
     {

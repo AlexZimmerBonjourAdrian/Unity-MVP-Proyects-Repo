@@ -1,23 +1,26 @@
-using RetroFPS.Interact;
-using UnityEngine;  
+using RetroFPS;
+using UnityEngine;
 
-public abstract class CharacterDecorator : BaseCharacter
+namespace HorrorEngine
 {
-    protected ICharacter _character;
-    protected Iinteract _interact;
-
-    public void SetCharacter(ICharacter character)
+    public abstract class CharacterDecorator : BaseCharacter
     {
-        _character = character;
-    }
+        protected ICharacter _character;
+        protected Iinteract _interact;
 
-    public override void Inicilizate()
-    {
-        _character?.Inicilizate();
-    }
+        public void SetCharacter(ICharacter character)
+        {
+            _character = character;
+        }
 
-    public override void Oninteract()
-    {
-         _interact?.Oninteract();
+        public override void Inicilizate()
+        {
+            _character?.Inicilizate();
+        }
+
+        public override void Oninteract()
+        {
+             _interact?.Oninteract();
+        }
     }
 }

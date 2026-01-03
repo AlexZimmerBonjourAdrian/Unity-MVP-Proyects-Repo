@@ -11,7 +11,9 @@ using System;
 using UnityEditor;
 #endif
 
-public class CEnemyManager : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CEnemyManager : MonoBehaviour
 {
     public static CEnemyManager Instance { get; private set; }
 
@@ -1014,5 +1016,6 @@ public class CEnemyManager : MonoBehaviour
         }
     }
     #endregion
+    }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RetroFPS.LevelManager
+namespace RetroFPS
 {
     
 public class CLevelManager : MonoBehaviour

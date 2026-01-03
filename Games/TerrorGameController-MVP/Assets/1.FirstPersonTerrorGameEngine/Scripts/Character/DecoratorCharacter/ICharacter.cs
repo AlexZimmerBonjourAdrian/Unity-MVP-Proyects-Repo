@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public interface ICharacter
+namespace HorrorEngine
 {
-    void Inicilizate();
-    
+    public interface ICharacter
+    {
+        void Inicilizate();
+    }
 }

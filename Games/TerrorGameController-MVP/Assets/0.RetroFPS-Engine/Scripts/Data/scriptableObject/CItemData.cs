@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PointClickerEngine
+namespace RetroFPS
 {
 [CreateAssetMenu(fileName = "NewItemData",menuName ="PointToClickEngine/Item")]
 [Serializable]

@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour
+namespace HorrorEngine
+{
+    public class ItemManager : MonoBehaviour
 {
     void Start()
     {
@@ -16,5 +18,6 @@ public class ItemManager : MonoBehaviour
 
         // Usar el ítem con todos los decoradores aplicados
         damageBoostItem.Use();
+    }
     }
 }

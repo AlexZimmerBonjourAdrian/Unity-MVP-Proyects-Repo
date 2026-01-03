@@ -4,7 +4,7 @@ using System.Reflection;
 using System.IO;
 using UnityEngine; // For PlayerPrefs and JsonUtility
 using Microsoft.CSharp; // For dynamic compilation
-namespace HorrorEngine.Events
+namespace HorrorEngine
 {
     public static class CGameEventManager
     {

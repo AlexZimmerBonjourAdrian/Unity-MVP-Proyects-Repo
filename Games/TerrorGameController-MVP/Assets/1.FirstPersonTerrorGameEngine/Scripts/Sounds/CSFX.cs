@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HorrorEngine.Sounds
+namespace HorrorEngine
 {
  
 public class CSFX : MonoBehaviour

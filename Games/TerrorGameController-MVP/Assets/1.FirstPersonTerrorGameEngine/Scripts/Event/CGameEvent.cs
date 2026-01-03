@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 
 
-namespace HorrorEngine.Events
+namespace HorrorEngine
 {
 
 public class CGameEvent<T> 

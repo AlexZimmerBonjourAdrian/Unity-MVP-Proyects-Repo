@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace RetroFPS.SFX
+namespace RetroFPS
 {
 public class CManagerSFX : MonoBehaviour
 {   

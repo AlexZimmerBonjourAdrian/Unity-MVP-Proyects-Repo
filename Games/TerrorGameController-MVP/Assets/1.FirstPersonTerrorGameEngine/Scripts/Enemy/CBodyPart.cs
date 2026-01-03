@@ -1,5 +1,5 @@
 using UnityEngine;
-using RetroFPS.Damage;
+using RetroFPS;
 using System.Collections;
 // Define el enum fuera de la clase para que sea accesible globalmente si es necesario,
 // o puedes ponerlo dentro de la clase CBodyPart si solo se usará allí.

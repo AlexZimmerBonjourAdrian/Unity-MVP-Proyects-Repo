@@ -1,0 +1,25 @@
+{
+    "name": "DeliriumArachneCore",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8ee9e806686c7844786ccd111c1015ef",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:34aa492b82754644eac2f903cd496268",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:69448af7b92c7f342b298e06a37122aa",
+        "GUID:536993f12b814234a8f1d38fa0a1f35c",
+        "GUID:f0c774e7dbab37641808f75bcc438e4a",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:3a299c53e4c683b4eb4a04c9ad9e648f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

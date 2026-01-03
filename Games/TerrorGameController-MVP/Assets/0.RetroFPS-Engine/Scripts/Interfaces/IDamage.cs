@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace RetroFPS.Damage
+namespace RetroFPS
 {
 
 public interface IDamage

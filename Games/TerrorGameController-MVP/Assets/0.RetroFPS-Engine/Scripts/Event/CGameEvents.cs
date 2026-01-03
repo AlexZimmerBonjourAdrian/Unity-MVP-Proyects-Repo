@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 
 
-namespace RetroFPS.Events
+namespace RetroFPS
 {
     public static class CGameEvents 
     {   

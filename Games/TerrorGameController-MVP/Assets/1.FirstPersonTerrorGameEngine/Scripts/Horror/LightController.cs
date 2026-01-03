@@ -1,37 +1,39 @@
 using UnityEngine;
 
-public class LightController : MonoBehaviour
+namespace HorrorEngine
 {
-
-    private Light lightSource; // Reference to the Light component
-    private bool isLightOn = true; // State of the light
-    
-    // Initialize the light source in Start
-    void Start()
+    public class LightController : MonoBehaviour
     {
-        lightSource = GetComponent<Light>();
-        if (lightSource == null)
+        private Light lightSource; // Reference to the Light component
+        private bool isLightOn = true; // State of the light
+        
+        // Initialize the light source in Start
+        void Start()
         {
-            Debug.LogError("Light component not found on the GameObject.");
+            lightSource = GetComponent<Light>();
+            if (lightSource == null)
+            {
+                Debug.LogError("Light component not found on the GameObject.");
+            }
         }
-    }
 
-    // Toggle the light on/off when the player presses the "F" key
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
+        // Toggle the light on/off when the player presses the "F" key
+        void Update()
         {
-            ToggleLight();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                ToggleLight();
+            }
         }
-    }
 
-    // Method to toggle the light state
-    private void ToggleLight()
-    {
-        if (lightSource != null)
+        // Method to toggle the light state
+        private void ToggleLight()
         {
-            isLightOn = !isLightOn;
-            lightSource.enabled = isLightOn;
+            if (lightSource != null)
+            {
+                isLightOn = !isLightOn;
+                lightSource.enabled = isLightOn;
+            }
         }
     }
 }

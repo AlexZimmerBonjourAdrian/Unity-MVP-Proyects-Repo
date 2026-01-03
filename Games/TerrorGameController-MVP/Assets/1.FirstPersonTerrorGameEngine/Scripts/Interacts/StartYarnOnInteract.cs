@@ -1,8 +1,6 @@
 using UnityEngine;
-using HorrorEngine.Interfaces;
-using HorrorEngine.Dialogue;
 
-namespace HorrorEngine.Interacts
+namespace HorrorEngine
 {
     public class StartYarnOnInteract : MonoBehaviour, Iinteract
     {

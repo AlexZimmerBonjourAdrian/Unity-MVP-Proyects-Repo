@@ -1,6 +1,7 @@
-
-
-public interface IItem
+namespace HorrorEngine
 {
-    void Use();
+    public interface IItem
+    {
+        void Use();
+    }
 }

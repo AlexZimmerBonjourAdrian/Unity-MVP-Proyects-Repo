@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 
 
-namespace HorrorEngine.Events
+namespace HorrorEngine
 {
 
 public static class CGameEvents 

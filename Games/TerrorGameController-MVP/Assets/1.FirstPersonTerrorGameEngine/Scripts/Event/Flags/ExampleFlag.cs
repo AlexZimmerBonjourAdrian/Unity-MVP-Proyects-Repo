@@ -1,7 +1,6 @@
-using HorrorEngine.Interfaces;
 using UnityEngine;
 
-namespace HorrorEngine.Events
+namespace HorrorEngine
 {
     public class ExampleFlag : MonoBehaviour, Iinteract
     {

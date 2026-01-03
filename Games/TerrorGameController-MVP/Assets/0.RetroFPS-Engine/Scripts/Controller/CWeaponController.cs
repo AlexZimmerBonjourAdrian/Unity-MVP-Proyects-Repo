@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RetroFPS.Damage;
-namespace RetroFPS.Weapon
+namespace RetroFPS
 {
 
 [RequireComponent(typeof(CWeapon))]

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace PointClickerEngine
+namespace RetroFPS
 {
 [CreateAssetMenu(fileName = "NewAnimatioNData", menuName = "PointToClickEngine/Animatic")]
 [Serializable]

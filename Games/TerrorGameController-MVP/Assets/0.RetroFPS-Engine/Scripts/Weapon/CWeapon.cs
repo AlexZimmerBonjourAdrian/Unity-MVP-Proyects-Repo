@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RetroFPS.Weapon
+namespace RetroFPS
 {
     public class CWeapon : MonoBehaviour
     {

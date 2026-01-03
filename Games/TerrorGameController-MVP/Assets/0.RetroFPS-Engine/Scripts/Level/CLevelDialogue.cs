@@ -18,13 +18,7 @@ public class CLevelDialogue : CLevelGeneric
    {
 
       
-       CMICILSPSystem.Instance.ApplyTemplate(CMICILSPSystem.Instance.Detective); 
-       
-        CMICILSPSystem.Instance.PrintStats(CMICILSPSystem.Instance.CurrentStatsTemplate);
-
-
- 
-       CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Sanity).ToString();
+       // Sistema de Rol eliminado
        
  
 
@@ -32,42 +26,11 @@ public class CLevelDialogue : CLevelGeneric
 
    private void Update()
    {
-   
-      if(Input.GetKeyDown(KeyCode.E))
-      {
-
-         CMICILSPSystem.Instance.IncreaseStat(CMICILSPSystem.Stats.Charm, 2);
-      }
-
-      
-      if(Input.GetKeyDown(KeyCode.Q))
-      {
-
-         CMICILSPSystem.Instance.DecreaseStat(CMICILSPSystem.Stats.Charm, 2);
-      }
-
-      //set random arquetipe by pressed Button R
-      if(Input.GetKeyDown(KeyCode.R))
-      {
-         CMICILSPSystem.Instance.ApplyTemplate(CMICILSPSystem.Instance.GetRandomTemplate()); 
-      }
-   
-
-      if(EmpatyText != null && SanityText != null && CharmText != null && WitsText != null && ComposureText != null)
+       // Sistema de Rol eliminado - UI de stats deshabilitada
+       if(EmpatyText != null && SanityText != null && CharmText != null && WitsText != null && ComposureText != null)
        {
-          NameArquetipe.text = CMICILSPSystem.Instance.CurrentStatsTemplate.Name;
-         SanityText.text = CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Sanity).ToString();
-         EmpatyText.text = CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Empathy).ToString();
-         CharmText.text= CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Charm).ToString();
-         WitsText.text= CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Wits).ToString();
-         ComposureText.text= CMICILSPSystem.Instance.GetStat(CMICILSPSystem.Stats.Composure).ToString();
-        
+           // UI de stats deshabilitada
        }
-      else
-      {
-         Debug.LogError("Hay una stat no cargada");
-      }
-  
    }
 }
    

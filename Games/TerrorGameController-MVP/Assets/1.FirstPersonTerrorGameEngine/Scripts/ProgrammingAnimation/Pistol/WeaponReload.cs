@@ -1,5 +1,9 @@
 using UnityEngine;
-public class WeaponReload : MonoBehaviour
+
+namespace HorrorEngine
 {
+    public class WeaponReload : MonoBehaviour
+    {
   
+    }
 }

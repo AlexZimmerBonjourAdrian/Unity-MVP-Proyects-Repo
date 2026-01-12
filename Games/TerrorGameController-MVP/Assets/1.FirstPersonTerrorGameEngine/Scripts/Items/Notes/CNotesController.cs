@@ -3,7 +3,9 @@ using Yarn.Unity;
 using HorrorEngine;
 using TMPro;
 
-public class CNotesController : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CNotesController : MonoBehaviour
 {
     [SerializeField] private GameObject noteUI; // UI element to display the note
     [SerializeField] private float interactionDistance = 3.0f; // Distance to interact with the note
@@ -64,5 +66,6 @@ public class CNotesController : MonoBehaviour
             noteUIText.text += c; // Update TextMeshPro text
             yield return new WaitForSecondsRealtime(0.02f); // Independent of game time
         }
+    }
     }
 }

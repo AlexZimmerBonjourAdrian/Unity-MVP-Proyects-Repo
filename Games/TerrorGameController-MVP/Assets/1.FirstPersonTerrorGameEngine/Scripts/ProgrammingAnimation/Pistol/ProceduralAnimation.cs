@@ -1,13 +1,14 @@
 using UnityEngine;
 
-
-[RequireComponent(typeof(WeaponAnimationManager))]
-[RequireComponent(typeof(WeaponRecoil))]
-[RequireComponent(typeof(WeaponSway))]
-[RequireComponent(typeof(WeaponReload))]
-[RequireComponent(typeof(CameraShake))]
-[RequireComponent(typeof(WeaponAim))]
-public class ProceduralAnimation : MonoBehaviour
+namespace HorrorEngine
+{
+    [RequireComponent(typeof(WeaponAnimationManager))]
+    [RequireComponent(typeof(WeaponRecoil))]
+    [RequireComponent(typeof(WeaponSway))]
+    [RequireComponent(typeof(WeaponReload))]
+    [RequireComponent(typeof(CameraShake))]
+    [RequireComponent(typeof(WeaponAim))]
+    public class ProceduralAnimation : MonoBehaviour
 {
     private WeaponAnimationManager weaponAnimationManager;
     private WeaponRecoil weaponRecoil;
@@ -123,5 +124,6 @@ public class ProceduralAnimation : MonoBehaviour
         // Dibuja una esfera en la posición inicial del objeto para visualizarlo en el editor
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(InitialTransform.position, 0.1f);
+    }
     }
 }

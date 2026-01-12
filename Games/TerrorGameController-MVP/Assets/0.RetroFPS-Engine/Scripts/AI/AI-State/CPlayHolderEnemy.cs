@@ -81,10 +81,10 @@ public class CPlayHolderEnemy : MonoBehaviour, IDamage
             }
         }
     }
-    public void OnDamage()
+    public void TakeDamage(int damage, Vector3 hitPoint, Vector3 hitNormal)
     {
-        Life -= 20;
-        Debug.Log("Life: " + Life);
+        Life -= damage;
+        Debug.Log($"Enemy recibió {damage} de daño. Vida restante: {Life}");
         CheckLife();
     }  
 }

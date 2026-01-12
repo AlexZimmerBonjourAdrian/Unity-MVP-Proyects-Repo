@@ -2,8 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "PathPrefab", menuName = "HorrorEngine/ResourcesPathDirection", order = 1)]
-public class ResourcesPathDirection : ScriptableObject
+namespace HorrorEngine
+{
+    [CreateAssetMenu(fileName = "PathPrefab", menuName = "HorrorEngine/ResourcesPathDirection", order = 1)]
+    public class ResourcesPathDirection : ScriptableObject
 {
     [Header("Configuración de Prefabs")]
     [SerializeField]
@@ -422,4 +424,5 @@ public class ResourcesPathDirection : ScriptableObject
         return string.Empty;
     }
     #endregion
+    }
 }

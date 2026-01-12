@@ -1,9 +1,11 @@
 using UnityEngine;
 
-/// <summary>
-/// Handles weapon recoil mechanics, including vertical and horizontal recoil, smooth interpolation, and recovery.
-/// </summary>
-public class WeaponRecoil : MonoBehaviour
+namespace HorrorEngine
+{
+    /// <summary>
+    /// Handles weapon recoil mechanics, including vertical and horizontal recoil, smooth interpolation, and recovery.
+    /// </summary>
+    public class WeaponRecoil : MonoBehaviour
 {
     [Header("Recoil Settings")]
     [Tooltip("Maximum vertical recoil amount.")]
@@ -62,5 +64,6 @@ public class WeaponRecoil : MonoBehaviour
 
         // Gradually reduce the target recoil to zero for recovery
         targetRecoil = Vector3.Lerp(targetRecoil, Vector3.zero, Time.deltaTime * returnSpeed);
+    }
     }
 }

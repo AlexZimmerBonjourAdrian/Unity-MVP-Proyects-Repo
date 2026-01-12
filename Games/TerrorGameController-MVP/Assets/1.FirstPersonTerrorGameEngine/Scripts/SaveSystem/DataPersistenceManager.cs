@@ -4,7 +4,9 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
-public class DataPersistenceManager : MonoBehaviour
+namespace HorrorEngine
+{
+    public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]
     [SerializeField] private bool disableDataPersistence = false; // Desactiva la persistencia de datos para pruebas.
@@ -186,5 +188,6 @@ public class DataPersistenceManager : MonoBehaviour
             SaveGame(); // Guarda los datos automáticamente.
             Debug.Log("Auto Saved Game");
         }
+    }
     }
 }

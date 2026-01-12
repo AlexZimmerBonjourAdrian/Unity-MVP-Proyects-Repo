@@ -5,7 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-public class ConfirmationPopupMenu : Menu
+namespace HorrorEngine
+{
+    public class ConfirmationPopupMenu : Menu
 {
     [Header("Components")]
     [SerializeField] private TextMeshProUGUI displayText;
@@ -38,5 +40,6 @@ public class ConfirmationPopupMenu : Menu
     private void DeactivateMenu() 
     {
         this.gameObject.SetActive(false);
+    }
     }
 }

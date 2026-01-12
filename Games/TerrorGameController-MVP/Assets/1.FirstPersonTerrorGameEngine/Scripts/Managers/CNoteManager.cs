@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CNoteManager : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CNoteManager : MonoBehaviour
 {
     public static CNoteManager Instance { get; private set; }
 
@@ -54,5 +56,6 @@ public class CNoteManager : MonoBehaviour
             activeNotes.Remove(note);
             Destroy(note); // O usar un sistema de pooling si es necesario
         }
+    }
     }
 }

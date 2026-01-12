@@ -1,13 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// This script is a basic 2D character controller that allows
-// the player to run and jump.
+namespace HorrorEngine
+{
+    // This script is a basic 2D character controller that allows
+    // the player to run and jump.
 
-[RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D : MonoBehaviour, IDataPersistence
+    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class CharacterController2D : MonoBehaviour, IDataPersistence
 {
 
     [Header("Movement Params")]
@@ -218,4 +220,5 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
         }
     }
 
+    }
 }

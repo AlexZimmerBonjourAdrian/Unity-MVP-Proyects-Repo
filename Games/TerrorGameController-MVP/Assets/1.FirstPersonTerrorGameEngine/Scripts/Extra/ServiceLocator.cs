@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-public static class ServiceLocator
+namespace HorrorEngine
+{
+    public static class ServiceLocator
 {
     private static readonly Dictionary<Type, object> services = new Dictionary<Type, object>();
 
@@ -22,5 +24,6 @@ public static class ServiceLocator
             return (T)service;
         }
         throw new Exception($"Service of type {type} not found.");
+    }
     }
 }

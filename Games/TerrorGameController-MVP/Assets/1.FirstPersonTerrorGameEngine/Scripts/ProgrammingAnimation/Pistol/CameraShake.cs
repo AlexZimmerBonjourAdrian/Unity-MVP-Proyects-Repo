@@ -1,5 +1,9 @@
 using UnityEngine;
-public class CameraShake : MonoBehaviour
+
+namespace HorrorEngine
 {
+    public class CameraShake : MonoBehaviour
+    {
   
+    }
 }

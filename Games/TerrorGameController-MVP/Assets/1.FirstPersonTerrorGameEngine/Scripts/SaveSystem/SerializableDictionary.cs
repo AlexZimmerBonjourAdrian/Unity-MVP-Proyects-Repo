@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] // Permite que esta clase sea serializable por Unity.
-public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
+namespace HorrorEngine
+{
+    [System.Serializable] // Permite que esta clase sea serializable por Unity.
+    public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
     // Listas serializables para almacenar las claves y valores del diccionario.
     [SerializeField] private List<TKey> keys = new List<TKey>();
@@ -41,5 +43,6 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
         {
             this.Add(keys[i], values[i]);
         }
+    }
     }
 }

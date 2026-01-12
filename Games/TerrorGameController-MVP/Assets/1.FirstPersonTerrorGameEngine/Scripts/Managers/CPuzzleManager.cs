@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPuzzleManager : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CPuzzleManager : MonoBehaviour
 {
     //Responsable de controlar todos los puzzles y de cada tipo 
 
@@ -32,5 +34,6 @@ public class CPuzzleManager : MonoBehaviour
         }
      //  DontDestroyOnLoad(this.gameObject);
         _inst = this;
+    }
     }
 }

@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class WeaponAim : MonoBehaviour
+namespace HorrorEngine
 {
-    private ProceduralAnimation proceduralAnimaton;
-    
-
-    void Start()
+    public class WeaponAim : MonoBehaviour
     {
-        proceduralAnimaton = GetComponent<ProceduralAnimation>(); 
+        private ProceduralAnimation proceduralAnimaton;
+        
+
+        void Start()
+        {
+            proceduralAnimaton = GetComponent<ProceduralAnimation>(); 
+        }
+
+       
+
     }
-
-   
-
 }
 
 

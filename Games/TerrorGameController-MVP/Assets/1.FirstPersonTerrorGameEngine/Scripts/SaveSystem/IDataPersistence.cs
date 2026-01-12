@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// La interfaz IDataPersistence define los métodos que deben implementarse
-/// para cargar y guardar datos del juego. Esto permite que diferentes clases
-/// implementen su propia lógica de persistencia, como guardar en archivos,
-/// bases de datos, o servicios en la nube.
-/// </summary>
-public interface IDataPersistence
+namespace HorrorEngine
+{
+    /// <summary>
+    /// La interfaz IDataPersistence define los métodos que deben implementarse
+    /// para cargar y guardar datos del juego. Esto permite que diferentes clases
+    /// implementen su propia lógica de persistencia, como guardar en archivos,
+    /// bases de datos, o servicios en la nube.
+    /// </summary>
+    public interface IDataPersistence
 {
     /// <summary>
     /// Método para cargar datos en el objeto GameData.
@@ -25,4 +27,5 @@ public interface IDataPersistence
     /// </summary>
     /// <param name="data">El objeto GameData que contiene los datos a guardar.</param>
     void SaveData(GameData data);
+    }
 }

@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// This script acts as a single point for all other scripts to get
-// the current input from. It uses Unity's new Input System and
-// functions should be mapped to their corresponding controls
-// using a PlayerInput component with Unity Events.
+namespace HorrorEngine
+{
+    // This script acts as a single point for all other scripts to get
+    // the current input from. It uses Unity's new Input System and
+    // functions should be mapped to their corresponding controls
+    // using a PlayerInput component with Unity Events.
 
-[RequireComponent(typeof(PlayerInput))]
-public class InputManager : MonoBehaviour
+    [RequireComponent(typeof(PlayerInput))]
+    public class InputManager : MonoBehaviour
 {
     private Vector2 moveDirection = Vector2.zero;
     private bool jumpPressed = false;
@@ -93,4 +95,5 @@ public class InputManager : MonoBehaviour
         exitPressed = false;
     }
 
+    }
 }

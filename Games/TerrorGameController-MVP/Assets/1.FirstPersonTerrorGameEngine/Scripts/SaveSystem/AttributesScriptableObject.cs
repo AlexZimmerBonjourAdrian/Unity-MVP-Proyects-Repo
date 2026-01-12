@@ -1,7 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Attributes", menuName = "ScriptableObjects/AttributesScriptableObject", order = 1)]
-public class AttributesScriptableObject : ScriptableObject
+namespace HorrorEngine
+{
+    [CreateAssetMenu(fileName = "Attributes", menuName = "ScriptableObjects/AttributesScriptableObject", order = 1)]
+    public class AttributesScriptableObject : ScriptableObject
 {
     // Atributo que representa la vitalidad del jugador.
     public int vitality;
@@ -14,4 +16,5 @@ public class AttributesScriptableObject : ScriptableObject
 
     // Atributo que representa la resistencia del jugador.
     public int endurance;
+    }
 }

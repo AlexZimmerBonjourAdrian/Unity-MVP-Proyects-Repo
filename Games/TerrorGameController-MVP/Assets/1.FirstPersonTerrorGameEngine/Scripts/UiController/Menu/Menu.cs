@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+namespace HorrorEngine
+{
+    public class Menu : MonoBehaviour
 {
     [Header("First Selected Button")]
     [SerializeField] private Button firstSelected;
@@ -16,5 +18,6 @@ public class Menu : MonoBehaviour
     public void SetFirstSelected(Button firstSelectedButton) 
     {
         firstSelectedButton.Select();
+    }
     }
 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] // Permite que esta clase sea serializable por Unity.
-public class GameData
+namespace HorrorEngine
+{
+    [System.Serializable] // Permite que esta clase sea serializable por Unity.
+    public class GameData
 {
     public long lastUpdated; // Marca de tiempo de la última actualización de los datos.
     public int deathCount; // Número de muertes del jugador.
@@ -20,5 +22,6 @@ public class GameData
         FlagCollected = new SerializableDictionary<string, bool>(); // Inicializa el diccionario de banderas.
         EventsCollected = new SerializableDictionary<string, bool>(); // Inicializa el diccionario de eventos.
         playerAttributesData = new AttributesData(); // Inicializa los atributos del jugador con valores predeterminados.
+    }
     }
 }

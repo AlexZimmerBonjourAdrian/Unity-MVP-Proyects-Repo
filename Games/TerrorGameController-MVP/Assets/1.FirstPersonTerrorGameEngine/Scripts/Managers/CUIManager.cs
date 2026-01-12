@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class CUIManager : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CUIManager : MonoBehaviour
 {
     public static CUIManager Instance { get; private set; } // Propiedad Singleton
 
@@ -54,5 +56,6 @@ public class CUIManager : MonoBehaviour
             bool isActive = uiPanels[panelIndex].activeSelf;
             uiPanels[panelIndex].SetActive(!isActive);
         }
+    }
     }
 }

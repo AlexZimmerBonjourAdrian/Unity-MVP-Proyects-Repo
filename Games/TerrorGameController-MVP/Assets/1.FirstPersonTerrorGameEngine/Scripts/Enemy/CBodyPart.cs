@@ -1,21 +1,24 @@
 using UnityEngine;
 using RetroFPS;
 using System.Collections;
-// Define el enum fuera de la clase para que sea accesible globalmente si es necesario,
-// o puedes ponerlo dentro de la clase CBodyPart si solo se usará allí.
-public enum EBodyPartType
+
+namespace HorrorEngine
 {
-    Head = 0,
-    Torso = 4,
-    Arm_Left = 1,
-    Arm_Right = 2,
-    Leg_Left = 3,
-    Leg_Right = 5,
-    Other = 6// Para partes no especificadas ejemplo cola
-}
+    // Define el enum fuera de la clase para que sea accesible globalmente si es necesario,
+    // o puedes ponerlo dentro de la clase CBodyPart si solo se usará allí.
+    public enum EBodyPartType
+    {
+        Head = 0,
+        Torso = 4,
+        Arm_Left = 1,
+        Arm_Right = 2,
+        Leg_Left = 3,
+        Leg_Right = 5,
+        Other = 6// Para partes no especificadas ejemplo cola
+    }
 
 
-public class CBodyPart : MonoBehaviour, IDamage
+    public class CBodyPart : MonoBehaviour, IDamage
 {
    
     [Tooltip("Tipo de parte del cuerpo.")]
@@ -39,9 +42,12 @@ public class CBodyPart : MonoBehaviour, IDamage
         }
     }
 
-   public void OnDamage()
+   public void TakeDamage(int damage, Vector3 hitPoint, Vector3 hitNormal)
 {
-    Debug.Log($"Damage received on {partType} with multiplier {damageMultiplier}.");
+    // Calcular el daño final aplicando el multiplicador de la parte del cuerpo
+    float finalDamage = damage * damageMultiplier;
+    
+    Debug.Log($"Damage received on {partType} with multiplier {damageMultiplier}. Final damage: {finalDamage}.");
 
     // Intentar activar la animación si se encontró el Animator
     if (animator != null)
@@ -76,9 +82,13 @@ public class CBodyPart : MonoBehaviour, IDamage
         Debug.LogError($"Animator is null for {gameObject.name}. Cannot process hit animation.");
     }
 
-    // Aquí podrías añadir lógica adicional, como notificar al CEnemyController principal
-    // para que descuente vida, pasando el damageMultiplier.
-    // Ejemplo: GetComponentInParent<CEnemyController>()?.TakeDamage(baseDamage * damageMultiplier);
+    // Notificar al CEnemyController principal para que descuente vida
+    // Buscar el componente CEnemy en los padres
+    CEnemy enemyController = GetComponentInParent<CEnemy>();
+    if (enemyController != null)
+    {
+        enemyController.DiscountLife(finalDamage);
+    }
 }
 
 // Corrutina para reiniciar el parámetro "HitPart"
@@ -88,6 +98,7 @@ private IEnumerator ResetHitPart()
     animator.SetBool("HitPart", false);
 }
 
+    }
 }
 
 

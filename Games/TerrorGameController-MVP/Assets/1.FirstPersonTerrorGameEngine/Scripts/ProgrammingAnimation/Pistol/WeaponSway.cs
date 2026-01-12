@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class WeaponSway : MonoBehaviour
+namespace HorrorEngine
+{
+    public class WeaponSway : MonoBehaviour
 {
     public float swayAmount = 0.10f; // Cantidad de oscilación
     public float swaySpeed = 20f; // Velocidad de oscilación
@@ -48,5 +50,6 @@ public class WeaponSway : MonoBehaviour
 
         // Aplicar la oscilación suavemente
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, swaySpeed * Time.deltaTime);
+    }
     }
 }

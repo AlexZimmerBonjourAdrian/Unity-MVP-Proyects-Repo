@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Factory
+namespace HorrorEngine
+{
+    public class Factory
 {
     private Dictionary<string, Queue<GameObject>> objectPools = new Dictionary<string, Queue<GameObject>>();
     private readonly object poolLock = new object();
@@ -91,5 +93,6 @@ public class Factory
             }
             objectPools.Clear();
         }
+    }
     }
 }

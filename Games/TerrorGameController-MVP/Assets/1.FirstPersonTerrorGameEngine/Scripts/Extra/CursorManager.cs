@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public static class CursorManager
+namespace HorrorEngine
+{
+    public static class CursorManager
 {
     public static void LockCursor()
     {
@@ -12,5 +14,6 @@ public static class CursorManager
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
     }
 }

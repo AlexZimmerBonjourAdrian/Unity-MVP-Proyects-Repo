@@ -1,8 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CManagerObject : MonoBehaviour
+namespace HorrorEngine
+{
+    public class CManagerObject : MonoBehaviour
 {
     //Por ahora, hay que ignorarlo
    //En cada nivel debe guardar todos lso objetos en el nivel en el que este Que tengan un CObjectInventorie Como padre
@@ -33,5 +35,6 @@ public class CManagerObject : MonoBehaviour
         }
        // DontDestroyOnLoad(this.gameObject);
         _inst = this;
+    }
     }
 }

@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class NoteLineView : MonoBehaviour
+namespace HorrorEngine
 {
+    public class NoteLineView : MonoBehaviour
+    {
 
+    }
 }

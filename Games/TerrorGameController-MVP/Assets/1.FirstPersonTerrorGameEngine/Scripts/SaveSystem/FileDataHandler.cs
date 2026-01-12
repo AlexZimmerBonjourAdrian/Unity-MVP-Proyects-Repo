@@ -4,7 +4,9 @@ using UnityEngine;
 using System;
 using System.IO;
 
-public class FileDataHandler
+namespace HorrorEngine
+{
+    public class FileDataHandler
 {
     private string dataDirPath = ""; // Ruta del directorio donde se almacenan los datos.
     private string dataFileName = ""; // Nombre del archivo de datos.
@@ -279,5 +281,6 @@ public class FileDataHandler
         }
 
         return success; // Devuelve true si la restauración fue exitosa.
+    }
     }
 }

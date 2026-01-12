@@ -42,18 +42,71 @@ namespace HorrorEngine
     private Transform CameraTransform;
 
     private Camera mainCamera;
+
+    // Componentes modulares
+    private HorrorHeadBobComponent headBobComponent;
+    private HorrorZoomComponent zoomComponent;
+    private HorrorCrouchComponent crouchComponent;
+    private HorrorCameraFOVController fovController;
+    private HorrorCrosshairComponent crosshairComponent;
+    private HorrorCameraInversionComponent cameraInversionComponent;
+
+    private bool isWalking = false;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
         _verticalRotation = transform.localEulerAngles.y;
-         mainCamera = Camera.main;
-      
+        mainCamera = Camera.main;
+
+        // Obtener o crear componentes modulares
+        headBobComponent = GetComponent<HorrorHeadBobComponent>();
+        if (headBobComponent == null)
+        {
+            headBobComponent = gameObject.AddComponent<HorrorHeadBobComponent>();
+        }
+
+        zoomComponent = GetComponent<HorrorZoomComponent>();
+        if (zoomComponent == null)
+        {
+            zoomComponent = gameObject.AddComponent<HorrorZoomComponent>();
+        }
+
+        crouchComponent = GetComponent<HorrorCrouchComponent>();
+        if (crouchComponent == null)
+        {
+            crouchComponent = gameObject.AddComponent<HorrorCrouchComponent>();
+        }
+
+        fovController = GetComponent<HorrorCameraFOVController>();
+        if (fovController == null)
+        {
+            fovController = gameObject.AddComponent<HorrorCameraFOVController>();
+        }
+
+        crosshairComponent = GetComponent<HorrorCrosshairComponent>();
+        if (crosshairComponent == null)
+        {
+            crosshairComponent = gameObject.AddComponent<HorrorCrosshairComponent>();
+        }
+
+        cameraInversionComponent = GetComponent<HorrorCameraInversionComponent>();
+        if (cameraInversionComponent == null)
+        {
+            cameraInversionComponent = gameObject.AddComponent<HorrorCameraInversionComponent>();
+        }
     }
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // Bloquear el cursor en el centro de la pantalla
         Cursor.visible = false; // Hacer el cursor invisible
+
+        // Inicializar componentes modulares
+        if (crosshairComponent != null)
+        {
+            crosshairComponent.Show();
+        }
     }
 
     private void Update()
@@ -99,19 +152,62 @@ namespace HorrorEngine
             sprintCooldownTimer -= Time.deltaTime;
         }
 
+        // Aplicar reducción de velocidad si está agachado
+        float crouchSpeedMultiplier = 1f;
+        if (crouchComponent != null && crouchComponent.IsCrouched())
+        {
+            crouchSpeedMultiplier = crouchComponent.GetSpeedReduction();
+        }
+
         float currentSpeed = isSprinting ? moveSpeed * sprintSpeedMultiplier : moveSpeed;
+        currentSpeed *= crouchSpeedMultiplier;
 
         _velocity.x = _moveDirection.x * currentSpeed;
         _velocity.z = _moveDirection.z * currentSpeed;
+
+        // Detectar si está caminando para headbob
+        isWalking = (_velocity.x != 0 || _velocity.z != 0) && _controller.isGrounded;
+
+        // Actualizar componentes modulares
+        if (headBobComponent != null)
+        {
+            headBobComponent.SetWalking(isWalking);
+            headBobComponent.SetSprinting(isSprinting);
+            if (crouchComponent != null)
+            {
+                headBobComponent.SetCrouched(crouchComponent.IsCrouched());
+            }
+        }
+
+        if (zoomComponent != null)
+        {
+            zoomComponent.SetSprinting(isSprinting);
+        }
+
+        if (fovController != null)
+        {
+            fovController.SetSprinting(isSprinting);
+            if (zoomComponent != null)
+            {
+                fovController.SetZoomed(zoomComponent.IsZoomed());
+            }
+        }
         
         // Mirar alrededor
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        //Invertimos el eje Y
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         _verticalRotation += mouseX;
-        _horizontalRotation += mouseY; // Cambio aquí: se suma en lugar de restar
-        //transform.localEulerAngles = new Vector3(_horizontalRotation, _verticalRotation, 0f);
+        
+        // Aplicar inversión de cámara si está configurada
+        if (cameraInversionComponent != null)
+        {
+            _horizontalRotation += cameraInversionComponent.ApplyInversion(mouseY);
+        }
+        else
+        {
+            _horizontalRotation += mouseY; // Comportamiento por defecto (ya invertido)
+        }
 
         _horizontalRotation = Mathf.Clamp(_horizontalRotation, -clampAngle, clampAngle);
 
@@ -119,9 +215,6 @@ namespace HorrorEngine
         transform.parent.localEulerAngles = new Vector3(0f, _verticalRotation, 0f);
     
         _controller.Move(_velocity * Time.deltaTime);
-        CameraTransform.transform.localEulerAngles = new Vector3(_horizontalRotation, _verticalRotation, 0f);
-    
-        // Rotar el objeto padre en Y
         CameraTransform.transform.localEulerAngles = new Vector3(_horizontalRotation, 0f, 0f); 
     }
 

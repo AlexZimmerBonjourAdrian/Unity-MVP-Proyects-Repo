@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] // Permite que esta clase sea serializable por Unity.
-public class AttributesData
+namespace HorrorEngine
+{
+    [System.Serializable] // Permite que esta clase sea serializable por Unity.
+    public class AttributesData
 {
     public int vitality; // Representa la vitalidad del jugador.
     public int strength; // Representa la fuerza del jugador.
@@ -17,5 +19,6 @@ public class AttributesData
         this.strength = 1; // Valor inicial de fuerza.
         this.intellect = 1; // Valor inicial de intelecto.
         this.endurance = 1; // Valor inicial de resistencia.
+    }
     }
 }

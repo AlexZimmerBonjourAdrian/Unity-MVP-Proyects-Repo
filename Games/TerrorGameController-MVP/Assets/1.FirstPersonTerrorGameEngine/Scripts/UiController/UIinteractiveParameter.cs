@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIinteractiveParameter : MonoBehaviour
+namespace HorrorEngine
+{
+    public class UIinteractiveParameter : MonoBehaviour
 {
     [SerializeField] private Sprite Normal;
     [SerializeField] private Sprite Interactive;
@@ -58,5 +60,6 @@ public class UIinteractiveParameter : MonoBehaviour
         {
             image.sprite = canInteract ? Interactive : Normal;
         }
+    }
     }
 }

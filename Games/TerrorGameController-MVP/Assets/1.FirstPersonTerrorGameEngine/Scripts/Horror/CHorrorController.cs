@@ -51,6 +51,9 @@ namespace HorrorEngine
     private HorrorCrosshairComponent crosshairComponent;
     private HorrorCameraInversionComponent cameraInversionComponent;
 
+    // Melee system
+    private MeleeWeaponController meleeWeaponController;
+
     private bool isWalking = false;
 
     private void Awake()
@@ -95,6 +98,9 @@ namespace HorrorEngine
         {
             cameraInversionComponent = gameObject.AddComponent<HorrorCameraInversionComponent>();
         }
+
+        // Obtener MeleeWeaponController (opcional)
+        meleeWeaponController = GetComponent<MeleeWeaponController>();
     }
 
     private void Start()
@@ -159,8 +165,16 @@ namespace HorrorEngine
             crouchSpeedMultiplier = crouchComponent.GetSpeedReduction();
         }
 
+        // Aplicar reducción de velocidad si está bloqueando con melee
+        float meleeSpeedMultiplier = 1f;
+        if (meleeWeaponController != null)
+        {
+            meleeSpeedMultiplier = meleeWeaponController.GetMovementSpeedMultiplier();
+        }
+
         float currentSpeed = isSprinting ? moveSpeed * sprintSpeedMultiplier : moveSpeed;
         currentSpeed *= crouchSpeedMultiplier;
+        currentSpeed *= meleeSpeedMultiplier;
 
         _velocity.x = _moveDirection.x * currentSpeed;
         _velocity.z = _moveDirection.z * currentSpeed;

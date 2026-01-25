@@ -22,6 +22,24 @@ public static readonly CGameEvent OnDialogueEnd = new CGameEvent();
 public static readonly CGameEvent OnInterruptDialogue = new CGameEvent();
 public static readonly CGameEvent OnPersuasiveDialogue = new CGameEvent();
 
+    //Task Events
+    public static readonly CGameEvent<string> OnTaskActivated = new CGameEvent<string>();
+    public static readonly CGameEvent<string> OnTaskProgressChanged = new CGameEvent<string>();
+    public static readonly CGameEvent<string> OnTaskCompleted = new CGameEvent<string>();
+    public static readonly CGameEvent<string> OnTaskRegistered = new CGameEvent<string>();
+
+    //Melee Events
+    public static readonly CGameEvent<string> OnMeleeAttack = new CGameEvent<string>();
+    public static readonly CGameEvent<MeleeHitEventData> OnMeleeHit = new CGameEvent<MeleeHitEventData>();
+    public static readonly CGameEvent<string> OnMeleeBlockStart = new CGameEvent<string>();
+    public static readonly CGameEvent<string> OnMeleeBlockEnd = new CGameEvent<string>();
+    public static readonly CGameEvent<string> OnMeleeWeaponEquipped = new CGameEvent<string>();
+
+    //Inventory Events
+    public static readonly CGameEvent<ItemPickedUpEventData> OnItemPickedUp = new CGameEvent<ItemPickedUpEventData>();
+    public static readonly CGameEvent<ItemUsedEventData> OnItemUsed = new CGameEvent<ItemUsedEventData>();
+    public static readonly CGameEvent<ItemRemovedEventData> OnItemRemoved = new CGameEvent<ItemRemovedEventData>();
+
     //Eventos de UI
     //To-do: integrate 
 public static readonly CGameEvent<bool> OnShowPauseMenu = new CGameEvent<bool>();

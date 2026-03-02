@@ -1,0 +1,182 @@
+﻿Game Design Document (GDD) – Versión 2.0
+Nombre del Juego: TriNodo: Flotas Estelares
+Logline / Elevator Pitch: Dos imperios galácticos se enfrentan por el dominio absoluto. Conquista las estrellas solitarias, expande tus rutas hiperespaciales y reclama sectores cósmicos. El imperio más grande devorará al más pequeño.
+Género(s): Casual Estratégico, Science Fiction, Board Game Digital, Multijugador (2 jugadores)
+Plataformas objetivo: PC (Steam, Epic Games Store), Mobile (Android / iOS)
+Versión del documento: 2.0
+Fecha: 02/03/2026
+Autor(es): Alex Zimmer – ZimmZimmGames
+Estudio / Equipo: ZimmZimmGames
+1. Índice
+1. Visión General / High Concept
+2. Historia y Narrativa
+3. Gameplay
+4. Diseño de Niveles y Mundo
+5. Arte y Dirección Visual
+6. Audio y Sonido
+7. Interfaz de Usuario (UI/UX)
+8. Monetización y Marketing
+9. Aspectos Técnicos
+10. Plan de Desarrollo
+11. Anexos
+2. Visión General / High Concept
+TriNodo: Flotas Estelares es un board-game digital ultra-portátil para dos jugadores que fusiona la estrategia geométrica de Dots & Boxes y Tatetí con el azar dinámico de los dados y la libertad creativa de construir tu propio sector espacial.
+Concepto principal
+Cada partida genera un campo de estrellas procedural. Los jugadores tiran 2d6 para obtener entre 2 y 12 líneas por turno y dibujan rutas hiperespaciales rectas de su color sin cruces. Al cerrar un triángulo con tres líneas del mismo color, lo reclamas instantáneamente.
+Condiciones de victoria (elegibles antes de la partida)
+* Modo Dominio ➔ Gana quien reclame más triángulos.
+* Modo Espectro ➔ Gana quien reclame menos triángulos (modo inverso de alta tensión).
+La partida termina cuando ningún jugador puede colocar más líneas válidas. ### Lo que lo hace único
+* Doble condición de victoria que cambia radicalmente la estrategia.
+* Swing épico de dados (2-12 líneas) controlado por el jugador.
+* Escalabilidad perfecta: 7 nodos (3-5 min), 16 nodos (8-12 min) o 34 nodos (15-25 min).
+* Cada partida genera una obra de arte geométrica única que se puede guardar y compartir.
+Características clave (USP)
+#
+	USP
+	Impacto en el Jugador
+	1
+	Doble Victoria Radical
+	Modo Espectro transforma conquista en evasión táctica.
+	2
+	Escalabilidad Orgánica
+	De blitz a duelos épicos con una sola regla.
+	3
+	Swing Táctico (RNG Controlado)
+	Remontadas imposibles y momentos de dopamina.
+	4
+	Arte Generativo Efímero
+	Cada partida es una composición visual única y compartible.
+	5
+	Accesibilidad Universal
+	Curva de aprendizaje de 2 minutos, ideal mobile y sesiones cortas.
+	Público objetivo
+* Edad: 7-40 años
+* Perfil: Jugadores casuales y semi-competitivos de Occidente y Latam que disfrutan juegos de mesa, estrategia ligera y títulos como Chess, Tic-Tac-Toe o Balatro.
+Referencias e inspiraciones
+* Juegos: Dots & Boxes, Tatetí, The Genius (core loop geométrico).
+* Temática: Star Wars Battlefront (conquistas galácticas), nebulosas y flotas estelares.
+3. Historia y Narrativa
+Dos imperios ancestrales —el Imperio Luminar (azul neón) y el Imperio Espectral (púrpura neón)— libran la Guerra de los Nodos por el control de la galaxia. Cada sector es un campo de estrellas que se conquista trazando rutas hiperespaciales. El imperio que controle más (o menos, en la doctrina Espectral) sectores será el que sobreviva.
+4. Gameplay
+4.1 Core Loop (Bucle principal)
+1. Tirada de dados ➔ 2d6 determina exactamente cuántas líneas debes colocar (2-12).
+2. Selecciona origen ➔ Elige un nodo que ya controlas.
+3. Modo Ráfaga ➔ Dibuja líneas en cadena (burst mode) hacia nodos válidos sin cruces.
+4. Reclamación instantánea ➔ Cierra uno o más triángulos ➔ los reclamas automáticamente.
+5. Fin de turno ➔ Cuando llegas a cero líneas o no hay movimientos válidos, pasa el turno.
+6. Fin de partida ➔ Nadie puede mover ➔ se resuelve victoria por triángulos reclamados.
+4.2 Mecánicas principales (versión definitiva V2.0)
+* Mecánica 1 – Tirada de Dados & Fin de Turno: Tiras 2d6 ➔ obtienes contador N (2-12). Colocas exactamente N líneas válidas (o hasta que no puedas). Si terminas antes de llegar a cero ➔ pierdes las líneas restantes (sin bono ni penalización extra).
+* Mecánica 2 – Nodos Fijos y Expansión: Todos los nodos se generan al inicio (nunca se añaden nuevos). Las líneas solo pueden dibujarse entre nodos existentes. Solo puedes atacar nodos rivales si la línea cierra al menos un triángulo en ese mismo turno.
+* Mecánica 3 – Regla de No-Cruce + Planar Forzado: El tablero usa Delaunay Triangulation para pre-calcular todas las conexiones posibles sin cruces. El jugador solo puede dibujar líneas rectas válidas.
+   * Modo Ráfaga (Burst Mode): En móvil mantienes el dedo y arrastras; en PC clic origen ➔ clic destino repetido. Snap automático y resaltado visual.
+* Mecánica 4 – Reclamación Instantánea de Triángulos: Tres líneas del mismo color = triángulo reclamado automáticamente + control permanente de sus vértices.
+* Mecánica 5 – Victoria Dual: - Modo Dominio: más triángulos.
+   * Modo Espectro: menos triángulos.
+4.3 Controles
+* Mobile: Tap para seleccionar origen, drag en Modo Ráfaga (snap automático).
+* PC: Clic izquierdo origen ➔ clic destino (repetición rápida). Tecla ESC para cancelar.
+* Accesibilidad: Alto contraste, modo color-blind, tamaño de nodos ajustable, tutorial interactivo.
+4.4 Sistemas del juego
+* Generación procedural de nodos (Poisson-disk sampling).
+* Motor de grafos + Delaunay.
+* IA.
+* Multiplayer local, vs CPU, online (Photon).
+* Sistema de victoria y estadísticas persistentes.
+4.5 IA Enemiga (V2.0 – Greedy + Look-ahead)
+Evaluación de cada posible línea: +15 cerrar triángulo | +8 reclamar nodo | +5 bloquear rival | -4 auto-bloqueo | +2 expansión
+Nivel
+	Tipo
+	Comportamiento
+	0-1
+	Novato
+	Aleatorio entre las 3 mejores.
+	2-3
+	Intermedio
+	70% mejor / 30% segunda mejor.
+	4
+	Avanzado
+	Minimax profundidad 2.
+	5-6
+	Maestro
+	Minimax profundidad 3 + evaluación completa.
+	5. Diseño de Niveles y Mundo
+* Tipo: 100% procedural (Poisson-disk sampling + Delaunay).
+* Escalas: 7 / 12 / 16 / 24 / 34 nodos (5 niveles de dificultad).
+* Ritmo: Partidas cortas y adictivas con pico de tensión en los últimos 3 turnos.
+6. Arte y Dirección Visual
+* Estilo: 2D minimalista cyber-sci-fi con líneas luminosas y partículas sutiles.
+* Paleta principal: Neón Azul / Púrpura, fondo negro profundo con estrellas y nebulosas suaves.
+* Mood: Elegante, futurista, limpio y adictivo visualmente (estilo Geometry Wars + Mini Metro).
+* Assets principales: - Nodos con glow variable según control.
+   * Líneas con efecto de energía.
+   * Triángulos con emblema de flota que aparece al reclamarse.
+   * Pantalla final con “obra de arte” exportable (PNG/SVG).
+7. Audio y Sonido
+* Música: Banda sonora épica-orquestal minimalista (estilo Hans Zimmer lite).
+* SFX: Sonidos Star Trek / sci-fi premium (hiper-salto, reclamación de triángulo “whoosh”, dados láser).
+* Voice: No aplica (solo efectos y UI).
+8. Interfaz de Usuario (UI/UX)
+* Menús principales: Pantalla título ➔ Selección de modo (Dominio/Espectro) ➔ Selección de tamaño ➔ Ready.
+* HUD en juego: Contador de líneas pendientes (grande), turno actual, puntuación de triángulos, botón Rendirse.
+* Onboarding: Tutorial interactivo de 60 segundos (3 pasos guiados).
+* Accesibilidad: Modo daltonismo, escalado dinámico, soporte para lectores de pantalla en menús.
+9. Monetización y Marketing
+* Modelo: - PC / Consolas: $14.99 (premium completo).
+   * Mobile: Free + IAP (skins de flotas $4.99, paquete cosmético $9.99, remover ads $2.99).
+* Post-lanzamiento: Mapas temáticos semanales gratuitos, nuevos modos (3-4 jugadores), editor de skins.
+* Marketing: Beta cerrada + influencers (YouTube/TikTok), torneos comunitarios, trailer “Modo Espectro” viral.
+10. Aspectos Técnicos
+* Motor: Unity 6
+* Multiplayer: Photon Fusion 2 (Steam + Mobile)
+* Requisitos mínimos: - PC: Windows 10, Intel i3 / Ryzen 3, 4 GB RAM, GPU integrada.
+   * Mobile: Android 9+ / iOS 13+, 2 GB RAM.
+11. Plan de Desarrollo
+MVP (Minimum Viable Product)
+* 7 y 16 nodos
+* 2 modos de victoria
+* IA niveles 0-4
+* Multiplayer local + online básico
+* Tutorial completo
+Fases
+1. Pre-producción: 3 semanas (GDD V2 + prototipo jugable)
+2. Producción: 10 semanas
+3. Alpha: 3 semanas (testing interno)
+4. Beta cerrada: 4 semanas (influencers + comunidad)
+5. Lanzamiento: Q3 2026
+12. Anexos
+* Algoritmo completo de generación de nodos (Poisson-disk).
+* Wireframes de UI y tablero (disponibles en carpeta compartida).
+* Tablas de balanceo (win-rate primer jugador con Pie Rule).
+* Mockups de arte final y efectos VFX.
+Resumen de cambios V2.0 respecto a V1.0
+* Todas las reglas centralizadas y consistentes.
+* Victoria por triángulos (mucho más claro).
+* Modo Ráfaga + Delaunay (fluidez garantizada).
+* IA profesional y escalable.
+* Documento completo, profesional y listo para desarrollo inmediato.
+¡TriNodo: Flotas Estelares está listo para conquistar las estrellas! 🔥
+
+________________
+Mecánicas Principales de TriNodo: Flotas Estelares (V2.0)
+A continuación se detallan las 5 mecánicas principales del juego y cómo está planeado su funcionamiento en la partida:
+1. Tirada de Dados & Fin de Turno (RNG Controlado)
+* Cómo está planeada: Al inicio de su turno, el jugador tira dos dados de seis caras (2d6). El resultado determina exactamente el número "N" de líneas (rutas hiperespaciales) que debe colocar en ese turno (entre 2 y 12).
+* Ejecución: El jugador debe intentar colocar todas las líneas. Si por alguna razón decide o se ve obligado a terminar su turno antes de usar todas sus líneas (llegar a cero), pierde las líneas restantes sin recibir ninguna bonificación ni penalización adicional.
+2. Nodos Fijos y Expansión
+* Cómo está planeada: El campo de juego está compuesto por "nodos" (estrellas). Todos los nodos se generan al principio de la partida mediante generación procedural (Poisson-disk sampling) y nunca se añaden nuevos durante el juego.
+* Ejecución: Las líneas solo se pueden dibujar conectando nodos ya existentes. Para expandirse, el jugador debe seleccionar un nodo de origen que ya controle. Solo se permite atacar (conectar hacia) nodos controlados por el rival si esa línea sirve para cerrar al menos un triángulo en ese mismo turno.
+3. Regla de No-Cruce + Planar Forzado (y Modo Ráfaga)
+* Cómo está planeada: Las líneas dibujadas no pueden cruzarse entre sí. Para asegurar esto de forma técnica, el tablero utiliza una Triangulación de Delaunay para pre-calcular todas las conexiones posibles y válidas sin cruces.
+* Ejecución (Modo Ráfaga): El jugador solo puede trazar líneas rectas permitidas por el sistema. Para hacerlo fluido, se implementa el "Modo Ráfaga" (Burst Mode):
+   * En Móvil: El jugador mantiene el dedo presionado y arrastra para dibujar líneas en cadena, con un sistema de "snap" (ajuste automático) y resaltado visual.
+   * En PC: Se hace clic izquierdo en el origen y luego clics repetidos en los destinos para encadenar las rutas.
+4. Reclamación Instantánea de Triángulos
+* Cómo está planeada: Es el núcleo de la conquista del tablero (estilo Dots & Boxes).
+* Ejecución: En el momento exacto en que un jugador logra cerrar un triángulo formando sus tres lados (líneas) con su propio color, ese triángulo es reclamado automáticamente. Al reclamarlo, el jugador también obtiene el control permanente de los vértices (nodos) de dicho triángulo.
+5. Victoria Dual (Condiciones de victoria elegibles)
+* Cómo está planeada: El juego ofrece dos modos de victoria completamente opuestos que cambian la estrategia base de los jugadores. Esto se elige antes de comenzar la partida.
+* Ejecución: La partida termina cuando ningún jugador puede colocar más líneas válidas. En ese momento se evalúa al ganador según el modo elegido:
+   * Modo Dominio: Gana el jugador que haya reclamado la mayor cantidad de triángulos.
+   * Modo Espectro: Gana el jugador que haya reclamado la menor cantidad de triángulos (transformando el juego en una evasión táctica y de alta tensión).

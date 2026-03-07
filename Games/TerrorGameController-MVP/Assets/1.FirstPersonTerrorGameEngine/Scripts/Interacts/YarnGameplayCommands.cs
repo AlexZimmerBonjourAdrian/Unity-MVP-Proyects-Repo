@@ -42,6 +42,94 @@ namespace HorrorEngine
 
             ray.SendMessage("SetInteractionsEnabled", isEnabled, SendMessageOptions.DontRequireReceiver);
         }
+
+        [YarnCommand("activate_task")] // uso: <<activate_task task_id>>
+        public void ActivateTask(string taskID)
+        {
+            if (TaskManager.Instance == null)
+            {
+                Debug.LogWarning("TaskManager no está disponible.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(taskID))
+            {
+                Debug.LogWarning("activate_task requiere un taskID.");
+                return;
+            }
+
+            bool activated = TaskManager.Instance.ActivateTask(taskID);
+            if (!activated)
+            {
+                Debug.LogWarning($"No se pudo activar la tarea '{taskID}'.");
+            }
+        }
+
+        [YarnCommand("complete_task")] // uso: <<complete_task task_id>>
+        public void CompleteTask(string taskID)
+        {
+            if (TaskManager.Instance == null)
+            {
+                Debug.LogWarning("TaskManager no está disponible.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(taskID))
+            {
+                Debug.LogWarning("complete_task requiere un taskID.");
+                return;
+            }
+
+            bool completed = TaskManager.Instance.CompleteTask(taskID);
+            if (!completed)
+            {
+                Debug.LogWarning($"No se pudo completar la tarea '{taskID}'.");
+            }
+        }
+
+        [YarnCommand("update_task_progress")] // uso: <<update_task_progress task_id amount>>
+        public void UpdateTaskProgress(string taskID, string amount)
+        {
+            if (TaskManager.Instance == null)
+            {
+                Debug.LogWarning("TaskManager no está disponible.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(taskID))
+            {
+                Debug.LogWarning("update_task_progress requiere un taskID.");
+                return;
+            }
+
+            if (!float.TryParse(amount, out float progressAmount))
+            {
+                Debug.LogWarning($"update_task_progress requiere un número válido. Valor recibido: {amount}");
+                return;
+            }
+
+            TaskManager.Instance.UpdateTaskProgress(taskID, progressAmount);
+        }
+
+        [YarnCommand("set_task_flag")] // uso: <<set_task_flag task_id flag_name>>
+        public void SetTaskFlag(string taskID, string flagName)
+        {
+            if (string.IsNullOrEmpty(taskID) || string.IsNullOrEmpty(flagName))
+            {
+                Debug.LogWarning("set_task_flag requiere taskID y flagName.");
+                return;
+            }
+
+            var task = TaskManager.Instance?.GetTask(taskID);
+            if (task != null && task.IsCompleted)
+            {
+                CFlagManager.SetFlag(flagName, true);
+            }
+            else
+            {
+                Debug.LogWarning($"La tarea '{taskID}' no está completada o no existe.");
+            }
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace HorrorEngine
@@ -68,7 +68,19 @@ namespace HorrorEngine
 
         public void TakeDamage(int damage)
         {
-            currentHealth -= damage;
+            // Verificar si se está bloqueando con melee para reducir daño
+            int finalDamage = damage;
+            var meleeController = GetComponent<MeleeWeaponController>();
+            if (meleeController != null && meleeController.HasWeapon())
+            {
+                var blockBehavior = GetComponent<MeleeBlockBehavior>();
+                if (blockBehavior != null && blockBehavior.IsBlocking())
+                {
+                    finalDamage = blockBehavior.ProcessBlockedDamage(damage);
+                }
+            }
+
+            currentHealth -= finalDamage;
             StopHealingOverTime(); // Stop healing when taking damage
 
             if (currentHealth <= 0)
